@@ -1,0 +1,171 @@
+/* pre-styling */
+*{
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+  color: blue;
+  text-decoration: underline;
+}
+body{
+  margin: 0px;
+}
+
+/* header styling */
+header{
+  position: relative;
+  background-color: black;
+  border: 1px solid black;
+  height: 70px;
+}
+header > nav{
+  font-size: 20px;
+  font-weight: bolder;
+  color: white;
+  position: absolute;
+  top: 32%;
+}
+/* footer styling */
+footer{
+  border-top: 1px solid rgb(196, 192, 192);
+  height: 45px;
+  background-color: black;
+  overflow: hidden;
+  font-size: 12px;
+}
+.footer-text{
+  margin: 10px;
+  color: white;
+}
+.left-footer{
+  margin-top: 15px;
+  padding-left: 15px;
+  float: left;
+  list-style-type: none;
+}
+.right-footer{
+  float: right;
+  margin-top: 2px;
+  list-style-type: none;
+  position: relative;
+  left: -6px;
+}
+.left-footer > li{ /* items on unordered list */
+  display: inline;
+}
+.right-footer > li > a > svg{ /* github icon */
+  fill: white;
+}
+
+/* *******INDEX.HTML STYLING******* */
+/* main styling */
+main{
+  position: relative;
+  height: 685px;
+  background-color: ivory;
+  margin: 0px;
+  padding: 5px;
+}
+.welcome-tag{
+  background-color: yellow;
+  border: 1px solid black;
+  border-radius: 25px; 
+  width: 300px;
+  margin: auto auto;
+  position: relative;
+  top: 18%;
+  padding: 15px; 
+}
+.welcome-tag > h1{
+  text-align: center;
+  font-weight: bold;
+}
+#lets-play{
+  display: table;
+  margin: 0px auto;
+}
+#lets-play-btn{
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+/* ********GAME.HTML STYLING******* */
+
+.body{
+  position: relative;
+}
+
+.time-bar{
+  margin: 0px;
+  background-color: #7FFFD4;
+  height: 30px;
+
+}
+.game-board{
+  border: 1px solid black;
+  width: 600px;
+  height: 600px;
+  padding: 10px;
+  position: relative;
+  display: inline-block;
+  left: 22%;
+  top: 40px;
+}
+
+.circle{
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+}
+
+#bot1-l{
+  left: 22%;
+}
+#bot2-r{
+  left: 58%;
+}
+#bot3-r{
+  left: 0%;
+  top: 24%;
+}
+#bot3-l{
+  left: 77%;
+  top: 24%;
+}
+#user-l{
+  left: 0%;
+  top: 50%;
+}
+#user-r{
+  left: 77%;
+  top: 50%;
+}
+#bot1-r{
+  left: 22%;
+  top: 70%;
+}
+#bot2-l{
+  left: 58%;
+  top: 70%;
+}
+.player-name{
+  position: absolute;
+  top: 30%;
+  left: 35%;
+}
+.player-hand{
+  position: absolute;
+  top: 50%;
+  left: 20%;
+}
