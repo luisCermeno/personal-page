@@ -1,16 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
 /* pre-styling */
-*{
-  box-sizing: border-box;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+html, body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Poopins', sans-serif;
   color: black;
-  text-decoration: none;
 }
-a:hover{
-  color: blue;
-  text-decoration: underline;
-}
-body{
-  margin: 0px;
+
+.padding{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-inline-start: 10px;
 }
 
 /* header styling */
@@ -29,35 +30,58 @@ header > nav{
 }
 /* footer styling */
 footer{
-  border-top: 1px solid rgb(196, 192, 192);
-  height: 45px;
   background-color: black;
-  overflow: hidden;
   font-size: 12px;
-}
-.footer-text{
-  margin: 10px;
   color: white;
 }
+
+footer .icon{
+  color: white !important;
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+footer p{
+  margin: 0px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
 .left-footer{
-  margin-top: 15px;
-  padding-left: 15px;
-  float: left;
-  list-style-type: none;
+  text-align: left;
 }
+
 .right-footer{
-  float: right;
-  margin-top: 2px;
-  list-style-type: none;
-  position: relative;
-  left: -6px;
+  text-align: right;
 }
-.left-footer > li{ /* items on unordered list */
-  display: inline;
+
+@media (max-width: 576px) {
+  .left-footer{
+    text-align: center;
+  }
+  .left-footer{
+    text-align: center;
+  }
 }
-.right-footer > li > a > svg{ /* github icon */
-  fill: white;
+
+@media (max-width: 768px) {
+  .left-footer{
+    text-align: center;
+  }
+  .right-footer{
+    text-align: center;
+  }
 }
+
+@media (max-width: 992px) {
+  .left-footer{
+    text-align: center;
+  }
+  .right-footer{
+    text-align: center;
+  }
+}
+
 
 /* *******INDEX.HTML STYLING******* */
 /* main styling */
