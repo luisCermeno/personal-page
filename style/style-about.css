@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+/* pre-styling */
+html, body{
+  height: 100%;
+  width: 100%;
+  font-family: "neosans regular", "Helvetica Neue", Helvetica, Arial, Sans-serif;;
+  color: black;
+  background-color: white;
+}
+.border{
+  border: 1px solid black;
+}
+/* navbar styling */
+.navbar{
+  background-color: black;
+  height: 100px;
+}
+.navbar-nav{
+  margin: 0px auto;
+}
+/* footer styling */
+footer{
+  background-color: black;
+  font-size: 12px;
+  color: white;
+}
+.col-left-footer, .col-right-footer{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-inline-start: 10px;
+}
+.col-left-footer{
+  text-align: left;
+}
+.col-left-footer > p{
+  margin: 0px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+.col-right-footer{
+  text-align: right;
+}
+.col-right-footer > .icon{
+  color: white !important;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+/* media queries */
+@media (max-width: 576px) {
+  .col-left-footer{
+    text-align: center;
+  }
+  .col-left-footer{
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .col-left-footer{
+    text-align: center;
+  }
+  .col-right-footer{
+    text-align: center;
+  }
+}
+@media (max-width: 992px) {
+  .col-left-footer{
+    text-align: center;
+  }
+  .col-right-footer{
+    text-align: center;
+  }
+}
+
+/* about.html styling */
+
+/* Hello section */
+.hello{
+  background-image: url(../img/landscape.jpg);
+  height: 600px;
+  background-position: 50% 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.hello  h1{
+  padding-top: 280px;
+  padding-inline-start: 50px;
+  font-weight: 300;
+  text-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.hello .btn:hover{
+  text-shadow: 0px 0px 0px rgb(0, 0, 0);
+}
+.description{
+  padding-top: 0px;
+  padding-inline-start: 50px;
+  font-size: 20px;
+}
+/* About me section */
+
+.about-me{
+  padding-top: 4%;
+  padding-bottom: 4%;
+  text-align: justify;
+}
+.col-right, .col-left{
+  padding: 0% 3%;
+}
+.col-right{
+  padding-right: 9%;
+}
+.col-left > img{
+  height: 450px;
+  /* margin-left: 50px; */
+}
+
+/*--- Fixed Background Image --*/
+figure {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  margin: 0!important;
+}
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#fixed-img {
+  background-image: url(../img/point-reyes.jpg);
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+}
+.contact{
+  padding-top: 200px;
+  text-shadow: 0px 0px 50px rgb(0, 0, 0);
+}
+.contact > .row{
+  padding-bottom: 60px;
+  }
+  .contact  p {
+    padding: 8px 0px;
+  }
+  .contact-icon{
+    color: black !important;
+    font-size: 60px;
+    padding: 10px 20px;
+  }

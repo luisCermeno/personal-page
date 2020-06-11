@@ -1,60 +1,54 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
-
 /* pre-styling */
 html, body{
   height: 100%;
   width: 100%;
-  font-family: 'Poopins', sans-serif;
+  font-family: "neosans regular", "Helvetica Neue", Helvetica, Arial, Sans-serif;;
   color: black;
+  background-color: white;
+}
+.border{
+  border: 1px solid black;
 }
 
-.padding{
+/* navbar styling */
+.navbar{
+  background-color: black;
+  height: 100px;
+}
+.navbar-nav{
+  margin: 0px auto;
+}
+
+/* footer styling */
+.foot-padding{
   padding-top: 15px;
   padding-bottom: 15px;
   padding-inline-start: 10px;
 }
-
-/* header styling */
-header{
-  position: relative;
-  background-color: black;
-  border: 1px solid black;
-  height: 70px;
-}
-header > nav{
-  font-size: 20px;
-  font-weight: bolder;
-  color: white;
-  position: absolute;
-  top: 32%;
-}
-/* footer styling */
 footer{
   background-color: black;
   font-size: 12px;
   color: white;
 }
-
 footer .icon{
   color: white !important;
-  font-size: 24px;
+  font-size: 20px;
   padding-left: 10px;
 }
-
 footer p{
   margin: 0px;
   font-weight: 600;
   padding-top: 10px;
 }
-
 .left-footer{
   text-align: left;
 }
-
 .right-footer{
   text-align: right;
 }
 
+/* media queries */
 @media (max-width: 576px) {
   .left-footer{
     text-align: center;
@@ -63,7 +57,6 @@ footer p{
     text-align: center;
   }
 }
-
 @media (max-width: 768px) {
   .left-footer{
     text-align: center;
@@ -72,7 +65,6 @@ footer p{
     text-align: center;
   }
 }
-
 @media (max-width: 992px) {
   .left-footer{
     text-align: center;
@@ -83,15 +75,58 @@ footer p{
 }
 
 
-/* *******INDEX.HTML STYLING******* */
-/* main styling */
-main{
-  position: relative;
-  height: 685px;
-  background-color: ivory;
-  margin: 0px;
-  padding: 5px;
+/* ***about.html styling*** */
+/*body styling*/
+.hello{
+  background-image: url(img/landscape.jpg);
+  height: 600px;
+  background-position: 50% 80%; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  color: white;
+  text-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
+.hello  h1{
+  font-weight: 300;
+  text-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.hello .btn:hover{
+  text-shadow: 0px 0px 0px rgb(0, 0, 0);
+}
+.description{
+  padding-top: 260px;
+}
+.col-about-me{
+  padding: 7% 7%;
+}
+.img-about-me{
+  padding: 7% 7%;
+}
+.img-about-me > img{
+  height: 550px;
+  margin-left: 50px;
+}
+.contact-col{
+padding-bottom: 50px;
+}
+.contact-icon{
+  color: black !important;
+  font-size: 60px;
+  padding: 10px 20px;
+}
+
+
+/* ***skills.html styling*** */
+/* carousel styling */
+.carousel-indicators > li {
+  background-color: grey;
+}
+.carousel-indicators .active{
+  background-color: black;
+}
+
+/* *******handsFlow.HTML STYLING******* */
+/* main styling */
 .welcome-tag{
   background-color: yellow;
   border: 1px solid black;
