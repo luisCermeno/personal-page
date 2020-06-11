@@ -3,7 +3,7 @@
 html, body{
   height: 100%;
   width: 100%;
-  font-family: "neosans regular", "Helvetica Neue", Helvetica, Arial, Sans-serif;;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, Sans-serif;
   color: black;
   background-color: white;
 }
@@ -13,7 +13,6 @@ html, body{
 /* navbar styling */
 .navbar{
   background-color: black;
-  height: 100px;
 }
 .navbar-nav{
   margin: 0px auto;
@@ -34,7 +33,6 @@ footer{
 }
 .col-left-footer > p{
   margin: 0px;
-  font-weight: 600;
   padding-top: 10px;
 }
 .col-right-footer{
@@ -46,28 +44,23 @@ footer{
   padding-left: 10px;
 }
 
+.col-right-footer > .icon:hover{
+  color: gray !important;
+}
+
 /* media queries */
 @media (max-width: 576px) {
-  .col-left-footer{
-    text-align: center;
-  }
-  .col-left-footer{
+  .col-left-footer, .col-right-footer{
     text-align: center;
   }
 }
 @media (max-width: 768px) {
-  .col-left-footer{
-    text-align: center;
-  }
-  .col-right-footer{
+  .col-left-footer, .col-right-footer{
     text-align: center;
   }
 }
 @media (max-width: 992px) {
-  .col-left-footer{
-    text-align: center;
-  }
-  .col-right-footer{
+  .col-left-footer, .col-right-footer{
     text-align: center;
   }
 }
@@ -90,7 +83,14 @@ footer{
   font-weight: 300;
   text-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
+.hello .btn{
+  background-color: black;
+  color: white;
+  border: black;
+}
 .hello .btn:hover{
+  background-color: white;
+  color: black;
   text-shadow: 0px 0px 0px rgb(0, 0, 0);
 }
 .description{
@@ -157,6 +157,12 @@ figure {
   }
   .contact-icon{
     color: black !important;
+    font-size: 60px;
+    padding: 10px 20px;
+  }
+  .contact-icon:hover{
+    color: white !important;
+    fill: black;
     font-size: 60px;
     padding: 10px 20px;
   }
