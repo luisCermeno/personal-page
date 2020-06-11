@@ -50,11 +50,17 @@ footer{
 
 /* media queries */
 @media (max-width: 576px) {
+  .navbar-nav{
+    text-align: center;
+  }
   .col-left-footer, .col-right-footer{
     text-align: center;
   }
 }
 @media (max-width: 768px) {
+  .navbar-nav{
+    text-align: center;
+  }
   .col-left-footer, .col-right-footer{
     text-align: center;
   }
@@ -67,7 +73,7 @@ footer{
 
 /* about.html styling */
 
-/* Hello section */
+/*--- Hello section ---*/
 .hello{
   background-image: url(../img/landscape.jpg);
   height: 600px;
@@ -79,9 +85,11 @@ footer{
 }
 .hello  h1{
   padding-top: 280px;
-  padding-inline-start: 50px;
   font-weight: 300;
   text-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.hello .hi{
+  padding-inline-start: 50px;
 }
 .hello .btn{
   background-color: black;
@@ -93,12 +101,12 @@ footer{
   color: black;
   text-shadow: 0px 0px 0px rgb(0, 0, 0);
 }
-.description{
+.description , .buttons{
   padding-top: 0px;
   padding-inline-start: 50px;
   font-size: 20px;
 }
-/* About me section */
+/*--- About me section ---*/
 
 .about-me{
   padding-top: 4%;
@@ -114,6 +122,9 @@ footer{
 .col-left > img{
   height: 450px;
   /* margin-left: 50px; */
+}
+#img-floated{
+  display: none;
 }
 
 /*--- Fixed Background Image --*/
@@ -146,7 +157,8 @@ figure {
   will-change: transform;
 }
 .contact{
-  padding-top: 200px;
+  position: absolute;
+  padding-top: 15%;
   text-shadow: 0px 0px 50px rgb(0, 0, 0);
 }
 .contact > .row{
@@ -166,3 +178,64 @@ figure {
     font-size: 60px;
     padding: 10px 20px;
   }
+
+
+  /* media queries */
+@media (max-width: 576px) {
+  
+
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 992px) {
+  /*--- Hello section ---*/
+.hello  h1{
+  font-size: 60px;
+  padding-top: 365px;
+  font-weight: 300;
+  text-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.hello .hi{
+  padding-inline-start: 20px;
+}
+.description, .buttons{
+  padding-top: 0px;
+  padding-inline-start: 20px;
+  font-size: 18px;
+}
+.description > p{
+  width: 90%;
+}
+.buttons{
+  padding-left: 20%;
+}
+#btn-check-skills{
+  margin-top: 20px;
+}
+
+
+
+/*--- About me section ---*/
+
+.about-me{
+  padding-top: 4%;
+  padding-bottom: 4%;
+  text-align: justify;
+}
+.col-right{
+  padding: 2% 9%;
+}
+.col-left{
+  display: none;
+}
+#img-floated{
+  display: block;
+  float: left;
+  height: 350px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+
+
+}
