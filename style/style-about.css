@@ -10,6 +10,9 @@ html, body{
 .border{
   border: 1px solid black;
 }
+.mb-only{
+  display: none;
+}
 /* navbar styling */
 .navbar{
   background-color: black;
@@ -131,7 +134,7 @@ footer{
 figure {
   position: relative;
   width: 100%;
-  height: 80%;
+  height: 500px;
   margin: 0!important;
 }
 .fixed-wrap {
@@ -143,6 +146,7 @@ figure {
   height: 100%;
 }
 #fixed-img {
+  z-index: -1;
   background-image: url(../img/point-reyes.jpg);
   position: fixed;
   display: block;
@@ -156,13 +160,10 @@ figure {
   transform: translateZ(0);
   will-change: transform;
 }
-.contact{
-  position: absolute;
-  padding-top: 15%;
-  text-shadow: 0px 0px 50px rgb(0, 0, 0);
-}
 .contact > .row{
-  padding-bottom: 60px;
+  text-shadow: 0px 0px 50px rgb(0, 0, 0);
+  padding-top: 30px;
+  padding-bottom: 30px;
   }
   .contact  p {
     padding: 8px 0px;
@@ -175,67 +176,182 @@ figure {
   .contact-icon:hover{
     color: white !important;
     fill: black;
-    font-size: 60px;
-    padding: 10px 20px;
   }
 
-
   /* media queries */
-@media (max-width: 576px) {
-  
 
+@media (max-width: 992px) {
+    /*--- Hello section ---*/
+  .hello  h1{
+    font-size: 60px;
+    padding-top: 365px;
+    font-weight: 300;
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+  }
+  .hello .hi{
+    padding-inline-start: 20px;
+  }
+  .description, .buttons{
+    padding-top: 0px;
+    padding-inline-start: 20px;
+    font-size: 18px;
+  }
+  .description > p{
+    width: 90%;
+  }
+  .buttons{
+    padding-left: 20%;
+  }
+  #btn-check-skills{
+    margin-top: 20px;
+  }
+  /*--- About me section ---*/
+  .about-me{
+    padding-top: 4%;
+    padding-bottom: 4%;
+    text-align: justify;
+  }
+  .col-right{
+    padding: 2% 9%;
+  }
+  .col-left{
+    display: none;
+  }
+  #img-floated{
+    display: block;
+    float: left;
+    height: 350px;
+    margin-right: 5%;
+    margin-bottom: 5%;
+  }
 }
 @media (max-width: 768px) {
-
-}
-@media (max-width: 992px) {
+  h1{
+    font-size: 30px;
+  }
+  p{
+    font-size: 14px;
+  }
   /*--- Hello section ---*/
-.hello  h1{
-  font-size: 60px;
-  padding-top: 365px;
-  font-weight: 300;
-  text-shadow: 0px 0px 10px rgb(0, 0, 0);
+  .hello{
+    height: 450px;
+    background-position: 50% 80%;
+  }
+  .hello  h1{
+    font-size: 45px;
+    padding-top: 270px;
+  }
+  .description, .buttons{
+    padding-inline-start: 20px;
+    font-size: 16px;
+  }
+  .buttons{
+    padding-left: 18%;
+    font-size: 16px;
+  }
+  #btn-check-skills{
+    margin-top: 20px;
+  }
+  /*--- About me section ---*/
+  .about-me{
+    padding-top: 4%;
+    padding-bottom: 4%;
+    text-align: justify;
+  }
+  .col-right{
+    padding: 2% 9%;
+  }
+  .col-left{
+    display: none;
+  }
+  #img-floated{
+    display: block;
+    float: left;
+    height: 300px;
+    margin-right: 5%;
+    margin-bottom: 5%;
+  }
+  /*--- Fixed Background Image --*/
+  .contact  p {
+    padding: 4px 0px;
+  }
+  .contact-icon{
+    color: black !important;
+    font-size: 40px;
+    padding: 10px 20px;
+  }
+  .contact-icon:hover{
+    color: white !important;
+    fill: black;
+  }
 }
-.hello .hi{
-  padding-inline-start: 20px;
-}
-.description, .buttons{
-  padding-top: 0px;
-  padding-inline-start: 20px;
-  font-size: 18px;
-}
-.description > p{
-  width: 90%;
-}
-.buttons{
-  padding-left: 20%;
-}
-#btn-check-skills{
-  margin-top: 20px;
-}
-
-
-
-/*--- About me section ---*/
-
-.about-me{
-  padding-top: 4%;
-  padding-bottom: 4%;
-  text-align: justify;
-}
-.col-right{
-  padding: 2% 9%;
-}
-.col-left{
-  display: none;
-}
-#img-floated{
-  display: block;
-  float: left;
-  height: 350px;
-  margin-right: 5%;
-  margin-bottom: 5%;
-}
-
-
+@media (max-width: 576px) {
+  h1{
+    font-size: 28px;
+  }
+  p{
+    font-size: 14px;
+  }
+  .mb-none, #img-floated{
+    display: none;
+  }
+  .mb-only{
+    display: inline-block;
+  }
+  /*--- Hello section ---*/
+  .hello{
+    height: 350px;
+    background-position: 0% 80%;
+  }
+  .hello  h1{
+    font-size: 40px;
+    padding-top: 210px;
+  }
+  .description, .buttons{
+    padding-inline-start: 1%;
+    font-size: 16px;
+  }
+  .description > p{
+    text-align: center;
+    width: 50%;
+    margin-bottom: 0px;
+  }
+  .buttons{
+    flex-basis: 53%;
+    text-align: center;
+    font-size: 16px;
+  }
+  #btn-check-skills{
+    margin-top: 0px;
+  }
+  /*--- About me section ---*/
+  .about-me h1{
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+  }
+  .about-me img{
+    display: block;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1.7rem;
+    margin-bottom: .5rem;
+  }
+  /*--- Fixed Background Image --*/
+  figure {
+    height: 400px;
+  }
+  .contact  p {
+    padding: 4px 0px;
+  }
+  .contact-icon{
+    color: black !important;
+    font-size: 40px;
+    padding: 10px 20px;
+  }
+  .contact-icon:hover{
+    color: white !important;
+    fill: black;
+  }
 }
