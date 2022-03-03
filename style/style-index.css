@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+/* pre-styling */
+html, body{
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+  color: black;
+  background-color: white;
+}
+.border{
+  border: 1px solid black;
+}
+.mb-only{
+  display: none;
+}
+/* navbar styling */
+.navbar{
+  background-color: black;
+}
+.navbar-nav{
+  margin: 0px auto;
+}
+/* footer styling */
+footer{
+  background-color: black;
+  font-size: 12px;
+  color: white;
+}
+.col-left-footer, .col-right-footer{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-inline-start: 10px;
+}
+.col-left-footer{
+  text-align: left;
+}
+.col-left-footer > p{
+  margin: 0px;
+  padding-top: 10px;
+}
+.col-right-footer{
+  text-align: right;
+}
+.col-right-footer > .icon{
+  color: white !important;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.col-right-footer > .icon:hover{
+  color: gray !important;
+}
+
+/* media queries */
+@media (max-width: 576px) {
+  .navbar-nav{
+    text-align: center;
+  }
+  .col-left-footer, .col-right-footer{
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-nav{
+    text-align: center;
+  }
+  .col-left-footer, .col-right-footer{
+    text-align: center;
+  }
+}
+@media (max-width: 992px) {
+  .col-left-footer, .col-right-footer{
+    text-align: center;
+  }
+}
+
+/* about.html styling */
+
+/*--- Hello section ---*/
+.hello{
+  background-image: url(../img/mit.jpg);
+  height: 600px;
+  background-position: 50% 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.hello  h1{
+  padding-top: 280px;
+  font-weight: 300;
+  text-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.hello .hi{
+  padding-inline-start: 50px;
+}
+.hello .btn{
+  background-color: black;
+  color: white;
+  border: black;
+}
+.hello .btn:hover{
+  background-color: white;
+  color: black;
+  text-shadow: 0px 0px 0px rgb(0, 0, 0);
+}
+.description , .buttons{
+  padding-top: 0px;
+  padding-inline-start: 50px;
+  font-size: 20px;
+}
+/*--- About me section ---*/
+
+.about-me{
+  padding-top: 4%;
+  padding-bottom: 4%;
+  text-align: justify;
+}
+.col-right, .col-left{
+  padding: 0% 3%;
+}
+.col-right{
+  padding-right: 9%;
+}
+.col-left > img{
+  height: 450px;
+  /* margin-left: 50px; */
+}
+#img-floated{
+  display: none;
+}
+
+/*--- Fixed Background Image --*/
+figure {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 0!important;
+}
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#fixed-img {
+  z-index: -1;
+  background-image: url(../img/point-reyes.jpg);
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+}
+.contact > .row{
+  text-shadow: 0px 0px 50px rgb(0, 0, 0);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  }
+  .contact  p {
+    padding: 8px 0px;
+  }
+  .contact-icon{
+    color: black !important;
+    font-size: 60px;
+    padding: 10px 20px;
+  }
+  .contact-icon:hover{
+    color: white !important;
+    fill: black;
+  }
+
+  /* media queries */
+
+@media (max-width: 992px) {
+    /*--- Hello section ---*/
+  .hello  h1{
+    font-size: 60px;
+    padding-top: 365px;
+    font-weight: 300;
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+  }
+  .hello .hi{
+    padding-inline-start: 20px;
+  }
+  .description, .buttons{
+    padding-top: 0px;
+    padding-inline-start: 20px;
+    font-size: 18px;
+  }
+  .description > p{
+    width: 90%;
+  }
+  .buttons{
+    padding-left: 20%;
+  }
+  #btn-check-skills{
+    margin-top: 20px;
+  }
+  /*--- About me section ---*/
+  .about-me{
+    padding-top: 4%;
+    padding-bottom: 4%;
+    text-align: justify;
+  }
+  .col-right{
+    padding: 2% 9%;
+  }
+  .col-left{
+    display: none;
+  }
+  #img-floated{
+    display: block;
+    float: left;
+    height: 350px;
+    margin-right: 5%;
+    margin-bottom: 5%;
+  }
+}
+@media (max-width: 768px) {
+  h1{
+    font-size: 30px;
+  }
+  p{
+    font-size: 14px;
+  }
+  /*--- Hello section ---*/
+  .hello{
+    height: 450px;
+    background-position: 50% 80%;
+  }
+  .hello  h1{
+    font-size: 45px;
+    padding-top: 270px;
+  }
+  .description, .buttons{
+    padding-inline-start: 20px;
+    font-size: 16px;
+  }
+  .buttons{
+    padding-left: 18%;
+    font-size: 16px;
+  }
+  #btn-check-skills{
+    margin-top: 20px;
+  }
+  /*--- About me section ---*/
+  .about-me{
+    padding-top: 4%;
+    padding-bottom: 4%;
+    text-align: justify;
+  }
+  .col-right{
+    padding: 2% 9%;
+  }
+  .col-left{
+    display: none;
+  }
+  #img-floated{
+    display: block;
+    float: left;
+    height: 300px;
+    margin-right: 5%;
+    margin-bottom: 5%;
+  }
+  /*--- Fixed Background Image --*/
+  .contact  p {
+    padding: 4px 0px;
+  }
+  .contact-icon{
+    color: black !important;
+    font-size: 40px;
+    padding: 10px 20px;
+  }
+  .contact-icon:hover{
+    color: white !important;
+    fill: black;
+  }
+}
+@media (max-width: 576px) {
+  h1{
+    font-size: 28px;
+  }
+  p{
+    font-size: 14px;
+  }
+  .mb-none, #img-floated{
+    display: none;
+  }
+  .mb-only{
+    display: inline-block;
+  }
+  /*--- Hello section ---*/
+  .hello{
+    height: 350px;
+    background-position: 0% 80%;
+  }
+  .hello  h1{
+    font-size: 40px;
+    padding-top: 210px;
+  }
+  .description, .buttons{
+    padding-inline-start: 1%;
+    font-size: 16px;
+  }
+  .description > p{
+    text-align: center;
+    width: 50%;
+    margin-bottom: 0px;
+  }
+  .buttons{
+    flex-basis: 53%;
+    text-align: center;
+    font-size: 16px;
+  }
+  #btn-check-skills{
+    margin-top: 0px;
+  }
+  /*--- About me section ---*/
+  .about-me h1{
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+  }
+  .about-me img{
+    display: block;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1.7rem;
+    margin-bottom: .5rem;
+  }
+  /*--- Fixed Background Image --*/
+  figure {
+    height: 400px;
+  }
+  .contact  p {
+    padding: 4px 0px;
+  }
+  .contact-icon{
+    color: black !important;
+    font-size: 40px;
+    padding: 10px 20px;
+  }
+  .contact-icon:hover{
+    color: white !important;
+    fill: black;
+  }
+}

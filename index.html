@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | luisCermeno</title>
+    <!-- Bootstrap style library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Jquery.js library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- Bootstrap.js library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Fontawesome library for social media icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/v4-shims.js"></script>
+    <link rel="stylesheet" href="style/style-index.css">
+    <link rel="shorcut icon" type="image/png" href="img/icon.png">
+    <script>
+      $(window).on('resize', function() {
+      var win = $(this);
+      if (win.width() > 768) {
+        $('#btn-learn-more').removeClass('btn-sm');
+        $('#btn-learn-more').addClass('btn-md');
+        $('#btn-check-skills').removeClass('btn-sm');
+        $('#btn-check-skills').addClass('btn-md');
+      } else{
+        $('#btn-learn-more').removeClass('btn-md');
+        $('#btn-learn-more').addClass('btn-sm');
+        $('#btn-check-skills').removeClass('btn-md');
+        $('#btn-check-skills').addClass('btn-sm');
+      }
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="skills.html">skills</a>
+            </li>
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">projects</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">hands flow</a>
+                <a class="dropdown-item" href="#">Current.com</a>
+                <a class="dropdown-item" href="#">The Commons.com</a>
+                <a class="dropdown-item" href="#">Social Network</a>
+                <a class="dropdown-item" href="#">Email Platform</a>
+                <a class="dropdown-item" href="#">Auction Website</a>
+                <a class="dropdown-item" href="#">Engineering Matlab Tools</a>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">about</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#h1-contact-me">contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Hello  section-->
+    <div class="container-fluid hello">
+      <div class="row">
+        <div class="col-12 hi">
+          <h1 class="display-1">Hello! I'm Luis </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-12 description">
+          <p class="mb-only">CS student currently based in Califonia. </p>
+          <p class="mb-none">Computer science student at Diablo Valley College. </p>
+          <p class="mb-none">Currently based in San Francisco Bay Area.</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-12 buttons">
+          <a class="btn btn-outline-light btn-sm mb-none" id="btn-learn-more" href="#h1-about-me"> About</a>
+          <a class="btn btn-outline-light btn-sm" id="btn-check-skills" href="skills.html"> Skills</a>
+        </div>
+      </div>
+    </div>
+    <!-- About me section -->
+    <div class="container-fluid about-me" id="h1-about-me">
+      <div class="row">
+        <div class="col-lg-5 text-center col-left">
+          <img class="img-fluid mb-none" src="img/sf.JPG" alt="Me">
+        </div>
+        <div class="col-lg-7 col-right" >
+          <img class="img-fluid mb-none" id="img-floated" src="img/sf.JPG" alt="Me">
+          <h1 >about me.</h1>
+          <img class="img-fluid mb-only"  src="img/sf.JPG" alt="Me">
+          <br class="mb-none">
+          <p>
+            Hello there, my name is Luis Cermeno. I'd like to thank you for visiting my personal page. Here you will learn about me and what I do.
+            I'm currently majoring in Computer Science, and I love web development. I have a thing for building 
+            cohesive designs and a comfy user experience.
+          </p>
+          <p>
+            For some, progamming is just technology-aid problem solving but for me is more than that. I would describe it as an art of creating.
+            Like painters paint landscapes that are pleasant to people's eyes, like musicians write songs that evoke emotions, I strive to build my 
+            programs with the most attractive and efficient interface that can enhance the user experience. 
+          </p>
+          <p>
+            When I'm not building software, I'm a tennis aficionado. Fun fact, I trained myself and now I am a decent 3.5 NTRP. It is not a pro level by far, but slowly I hope I can get there!
+            On vacations, I love roadtripping and hiking. Some life-time moments can come from the right hikes. Bellow, you'll find a picture that I took of the light house at Point Reyes, nort from San Francisco.
+            An unforgetable memory that I have with my best friend.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--- Fixed background and Contact Section-->
+    <figure>
+      <div class="fixed-wrap" id="h1-contact-me">
+        <div class="container-fluid contact">
+          <div class="row text-center">
+            <div class="col-12">
+              <h1 >contact me.</h1>
+            </div>
+            <div class="col-12">
+              <p>I'm always ready to collaborate</p>
+              <p>Feel free to reach out to me !</p>
+              <a  href="mailto:luis.cermeno.f@gmail.com" title="Click to copy my mail" class="contact-icon" ><i class="fas fa-envelope"></i></a>
+              <a href="#" title="Go to my LinkedIn" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div id="fixed-img"></div>
+      </div>
+    </figure>
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-left-footer col-sm-12 col-lg-2">
+            <p>© 2022 luisCermeno</p>
+          </div>
+          <div class="col-sm-12 col-lg-7"></div>
+          <div class="col-right-footer col-sm-12 col-lg-3">
+            <a href="#" title="Facebook" class="icon"><i class="fa fa-facebook"></i></a>
+            <a href="#" title="Twitter" class="icon"><i class="fa fa-twitter"></i></a>
+            <a href="#" title="Instagram" class="icon"><i class="fa fa-instagram"></i></a>
+            <a href="#" title="Facebook" class="icon"><i class="fa fa-github" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
