@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | luisCermeno</title>
+    <title>Skill Set | luisCermeno</title>
     <!-- Bootstrap style library -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- Jquery.js library -->
@@ -15,24 +15,8 @@
     <!-- Fontawesome library for social media icons -->
     <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/v4-shims.js"></script>
-    <link rel="stylesheet" href="style/style-index.css">
+    <link rel="stylesheet" href="style/style-skillset.css">
     <link rel="shorcut icon" type="image/png" href="img/icon.png">
-    <script>
-      $(window).on('resize', function() {
-      var win = $(this);
-      if (win.width() > 768) {
-        $('#btn-learn-more').removeClass('btn-sm');
-        $('#btn-learn-more').addClass('btn-lg');
-        $('#btn-check-skills').removeClass('btn-sm');
-        $('#btn-check-skills').addClass('btn-lg');
-      } else{
-        $('#btn-learn-more').removeClass('btn-lg');
-        $('#btn-learn-more').addClass('btn-sm');
-        $('#btn-check-skills').removeClass('btn-lg');
-        $('#btn-check-skills').addClass('btn-sm');
-      }
-      });
-    </script>
   </head>
 
   <body>
@@ -44,7 +28,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item ">
+            <li class="nav-item active">
               <a class="nav-link" href="skillset.html">skill set</a>
             </li>
             <li class="nav-item dropdown ">
@@ -59,8 +43,8 @@
                 <a class="dropdown-item" href="#">Engineering Matlab Tools</a>
               </div>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">about</a>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">about</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">blog</a>
@@ -72,21 +56,11 @@
         </div>
       </div>
     </nav>
-    <!-- Hello  section-->
-    <div class="container-fluid hello-section-container">
+    <!-- Title  section-->
+    <div class="container-fluid title-section-container">
       <div class="row">
-        <div class="col-12 hi">
-          <h1 class="display-1 ">Hello! I'm Luis </h1>
-        </div>
-      </div>
-      <div class="row buttons-description-row">
-        <div class="col-6 col-lg-12 description">
-          <p> CS student currently based in SF Bay Area. </p>
-          <p class="md-none">Computer science student at Diablo Valley College. </p>
-        </div>
-        <div class="col-6 col-lg-12 buttons">
-          <a class="btn btn-outline-light btn-sm" id="btn-learn-more" href="#h1-about-me"> About</a>
-          <a class="btn btn-outline-light btn-sm" id="btn-check-skills" href="skillset.html"> Skill Set</a>
+        <div class="col-12 title">
+          <h1 class="display-1 ">Skill Set </h1>
         </div>
       </div>
     </div>
