@@ -74,6 +74,9 @@ footer{
   }
 }
 
+/* ******************************************************************* */
+/* ******************************************************************* */
+
 /* about.html styling */
 
 /*--- Hello section ---*/
@@ -202,9 +205,6 @@ figure {
   .buttons{
     padding-left: 20%;
   }
-  #btn-check-skills{
-    margin-top: 20px;
-  }
   /*--- About me section ---*/
   .about-me{
     padding-top: 4%;
@@ -248,9 +248,6 @@ figure {
   .buttons{
     padding-left: 18%;
     font-size: 16px;
-  }
-  #btn-check-skills{
-    margin-top: 20px;
   }
   /*--- About me section ---*/
   .about-me{
@@ -321,9 +318,7 @@ figure {
     text-align: center;
     font-size: 16px;
   }
-  #btn-check-skills{
-    margin-top: 0px;
-  }
+
   /*--- About me section ---*/
   .about-me h1{
     padding-top: 1rem;
