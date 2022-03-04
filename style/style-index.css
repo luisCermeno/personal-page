@@ -80,7 +80,7 @@ footer{
 /* about.html styling */
 
 /*--- Hello section ---*/
-.hello{
+.hello-section-container{
   background-image: url(../img/mit.jpg);
   height: 600px;
   background-position: 50% 80%;
@@ -89,20 +89,20 @@ footer{
   color: white;
   text-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
-.hello  h1{
+.hello-section-container  h1{
   padding-top: 280px;
   font-weight: 300;
   text-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
-.hello .hi{
+.hello-section-container .hi{
   padding-inline-start: 50px;
 }
-.hello .btn{
+.hello-section-container .btn{
   background-color: black;
   color: white;
   border: black;
 }
-.hello .btn:hover{
+.hello-section-container .btn:hover{
   background-color: white;
   color: black;
   text-shadow: 0px 0px 0px rgb(0, 0, 0);
@@ -185,13 +185,13 @@ figure {
 
 @media (max-width: 992px) {
     /*--- Hello section ---*/
-  .hello  h1{
+  .hello-section-container  h1{
     font-size: 60px;
     padding-top: 365px;
     font-weight: 300;
     text-shadow: 0px 0px 10px rgb(0, 0, 0);
   }
-  .hello .hi{
+  .hello-section-container .hi{
     padding-inline-start: 20px;
   }
   .description, .buttons{
@@ -233,11 +233,11 @@ figure {
     font-size: 14px;
   }
   /*--- Hello section ---*/
-  .hello{
+  .hello-section-container{
     height: 450px;
     background-position: 50% 80%;
   }
-  .hello  h1{
+  .hello-section-container  h1{
     font-size: 45px;
     padding-top: 270px;
   }
@@ -296,27 +296,33 @@ figure {
     display: inline-block;
   }
   /*--- Hello section ---*/
-  .hello{
+  .hello-section-container{
     height: 350px;
     background-position: 0% 80%;
   }
-  .hello  h1{
+  .hello-section-container  h1{
+    text-align: center;
     font-size: 40px;
-    padding-top: 210px;
+    padding-top: 28%;
+  }
+  .buttons-description-row{
+    padding-top: 30%;
   }
   .description, .buttons{
-    padding-inline-start: 1%;
     font-size: 16px;
   }
   .description > p{
     text-align: center;
-    width: 50%;
+    width: 75%;
     margin-bottom: 0px;
+    /* padding-inline-start: 0px; */
   }
   .buttons{
-    flex-basis: 53%;
+    padding-inline-start: 30%;
     text-align: center;
-    font-size: 16px;
+  }
+  #btn-learn-more,#btn-check-skills{
+    border: 1px solid white;
   }
 
   /*--- About me section ---*/

@@ -22,13 +22,13 @@
       var win = $(this);
       if (win.width() > 768) {
         $('#btn-learn-more').removeClass('btn-sm');
-        $('#btn-learn-more').addClass('btn-md');
+        $('#btn-learn-more').addClass('btn-lg');
         $('#btn-check-skills').removeClass('btn-sm');
-        $('#btn-check-skills').addClass('btn-md');
+        $('#btn-check-skills').addClass('btn-lg');
       } else{
-        $('#btn-learn-more').removeClass('btn-md');
+        $('#btn-learn-more').removeClass('btn-lg');
         $('#btn-learn-more').addClass('btn-sm');
-        $('#btn-check-skills').removeClass('btn-md');
+        $('#btn-check-skills').removeClass('btn-lg');
         $('#btn-check-skills').addClass('btn-sm');
       }
       });
@@ -73,19 +73,19 @@
       </div>
     </nav>
     <!-- Hello  section-->
-    <div class="container-fluid hello">
+    <div class="container-fluid hello-section-container">
       <div class="row">
         <div class="col-12 hi">
-          <h1 class="display-1">Hello! I'm Luis </h1>
+          <h1 class="display-1 ">Hello! I'm Luis </h1>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 col-sm-6 col-md-6 col-lg-12 description">
-          <p>CS student currently based in SF Bay Area. </p>
+      <div class="row buttons-description-row">
+        <div class="col-6 col-lg-12 description">
+          <p> CS student currently based in SF Bay Area. </p>
           <p class="md-none">Computer science student at Diablo Valley College. </p>
         </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-12 buttons">
-          <a class="btn btn-outline-light btn-sm " id="btn-learn-more" href="#h1-about-me"> About</a>
+        <div class="col-6 col-lg-12 buttons">
+          <a class="btn btn-outline-light btn-sm" id="btn-learn-more" href="#h1-about-me"> About</a>
           <a class="btn btn-outline-light btn-sm" id="btn-check-skills" href="skills.html"> Skills</a>
         </div>
       </div>
