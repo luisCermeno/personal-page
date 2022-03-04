@@ -10,7 +10,7 @@ html, body{
 .border{
   border: 1px solid black;
 }
-.mb-only{
+.md-only{
   display: none;
 }
 /* navbar styling */
@@ -292,10 +292,10 @@ figure {
   p{
     font-size: 14px;
   }
-  .mb-none, #img-floated{
+  .md-none, #img-floated{
     display: none;
   }
-  .mb-only{
+  .md-only{
     display: inline-block;
   }
   /*--- Hello section ---*/
