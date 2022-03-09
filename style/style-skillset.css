@@ -84,90 +84,58 @@ footer{
 
 /*--- Hello section ---*/
 .title-section-container{
-  background-image: url(../img/mit.jpg);
-  height:200px;
-  background-position: 50% 80%;
+  background-image: url(../img/road-oakdale.jpg);
+  height:400px;
+  background-position: 50% -600px;
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
-  text-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 .title-section-container .title{
+  color: white;
   padding-inline-start: 50px;
-  padding-top: 10%;
-}
-.title-section-container  h1{
+  padding-top: 25px;
   font-weight: 300;
   text-shadow: 0px 0px 10px rgb(0, 0, 0);
+  
 }
 
-/*--- About me section ---*/
-.about-me{
+.title > h5{
+  padding-top: 50px;
+}
+
+/*--- Skill section ---*/
+.skill-section-container{
+ height: 300px;
+}
+.skill-description{
   padding-top: 4%;
   padding-bottom: 4%;
-  text-align: justify;
-}
-.col-right, .col-left{
-  padding: 0% 3%;
-}
-.col-right{
-  padding-right: 9%;
-}
-.col-left > img{
-  height: 450px;
-  /* margin-left: 50px; */
-}
-#img-floated{
-  display: none;
+  text-align: center;
 }
 
-/*--- Fixed Background Image Section--*/
-figure {
-  position: relative;
-  width: 100%;
+.skill-description > p {
+  margin: auto;
+  width: 70%;
+}
+/*--- Skill Image Section--*/
+.skill-img-container{
   height: 500px;
-  margin: 0!important;
-}
-.fixed-wrap {
-  clip: rect(0, auto, auto, 0);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-#fixed-img {
-  z-index: -1;
-  background-image: url(../img/point-reyes.jpg);
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-size: cover;
-  background-position: center center;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: transform;
+ }
+
+ #skill1{
+   background-image: url(../img/sample1.jpeg);
+ }
+ #skill2{
+  background-image: url(../img/sample2.jpeg);
 }
-.contact > .row{
-  text-shadow: 0px 0px 50px rgb(0, 0, 0);
-  padding-top: 30px;
-  padding-bottom: 30px;
-  }
-  .contact  p {
-    padding: 8px 0px;
-  }
-  .contact-icon{
-    color: black !important;
-    font-size: 60px;
-    padding: 10px 20px;
-  }
-  .contact-icon:hover{
-    color: white !important;
-    fill: black;
-  }
+#skill3{
+  background-image: url(../img/sample3.jpeg);
+
+}
+#skill4{
+  background-image: url(../img/sample4.jpeg);
+}
 
   /* ************** */
   /* media queries  */
