@@ -82,7 +82,7 @@ footer{
 /* ******************* skillset.html styling ************************* */
 /* ******************************************************************* */
 
-/*--- Hello section ---*/
+/*--- Title section ---*/
 .title-section-container{
   background-image: url(../img/road-oakdale.jpg);
   height:400px;
@@ -100,7 +100,7 @@ footer{
 }
 
 .title > h5{
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 /*--- Skill section ---*/
@@ -142,7 +142,7 @@ footer{
   /* ************** */
 
 @media (max-width: 992px) {
-    /*--- Hello section media queries---*/
+    /*--- Title section media queries---*/
   .title-section-container  h1{
     font-size: 60px;
     font-weight: 300;
@@ -151,25 +151,8 @@ footer{
   .title-section-container .title{
     padding-inline-start: 20px;
   }
-  /*--- About me section media queries ---*/
-  .about-me{
-    padding-top: 4%;
-    padding-bottom: 4%;
-    text-align: justify;
-  }
-  .col-right{
-    padding: 2% 9%;
-  }
-  .col-left{
-    display: none;
-  }
-  #img-floated{
-    display: block;
-    float: left;
-    height: 350px;
-    margin-right: 5%;
-    margin-bottom: 5%;
-  }
+  /*--- Skill section media queries ---*/
+
 }
 @media (max-width: 768px) {
   h1{
@@ -178,45 +161,15 @@ footer{
   p{
     font-size: 14px;
   }
-  /*--- Hello section media queries ---*/
+  /*--- Title section media queries ---*/
   .title-section-container{
     background-position: 50% 80%;
   }
   .title-section-container  h1{
     font-size: 45px;
   }
-  /*--- About me section media queries ---*/
-  .about-me{
-    padding-top: 4%;
-    padding-bottom: 4%;
-    text-align: justify;
-  }
-  .col-right{
-    padding: 2% 9%;
-  }
-  .col-left{
-    display: none;
-  }
-  #img-floated{
-    display: block;
-    float: left;
-    height: 300px;
-    margin-right: 5%;
-    margin-bottom: 5%;
-  }
-  /*--- Fixed Background Image section media queries --*/
-  .contact  p {
-    padding: 4px 0px;
-  }
-  .contact-icon{
-    color: black !important;
-    font-size: 40px;
-    padding: 10px 20px;
-  }
-  .contact-icon:hover{
-    color: white !important;
-    fill: black;
-  }
+  /*--- Skill section media queries ---*/
+
 }
 @media (max-width: 576px) {
   h1{
@@ -231,7 +184,7 @@ footer{
   .md-only{
     display: inline-block;
   }
-  /*--- Hello section media queries ---*/
+  /*--- Title section media queries ---*/
   .title-section-container{
     background-position: 0% 80%;
   }
@@ -240,34 +193,8 @@ footer{
     font-size: 40px;
   }
 
-  /*--- About me section media queries ---*/
-  .about-me h1{
-    padding-top: 1rem;
-    padding-bottom: 1.5rem;
-    text-align: center;
-  }
-  .about-me img{
-    display: block;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 1.7rem;
-    margin-bottom: .5rem;
-  }
+  /*--- Skill section media queries ---*/
+
   /*--- Fixed Background Image media queries --*/
-  figure {
-    height: 400px;
-  }
-  .contact  p {
-    padding: 4px 0px;
-  }
-  .contact-icon{
-    color: black !important;
-    font-size: 40px;
-    padding: 10px 20px;
-  }
-  .contact-icon:hover{
-    color: white !important;
-    fill: black;
-  }
+
 }
