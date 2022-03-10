@@ -22,3 +22,32 @@ document.addEventListener('DOMContentLoaded' , function(){
     skill4.style.backgroundPositionY = offset * 0.7 + "px";
   })
 })
+
+
+//MEDIA QUERIES
+const 
+  screen = {
+    small : null,
+    medium: window.matchMedia('(min-width: 577px)'),
+    large : window.matchMedia('(min-width: 769px)')
+  }
+
+// add media query events
+for (let [scr, mq] of Object.entries(screen)) {
+  if (mq) mq.addEventListener('change', mqHandler);
+}
+
+// first event
+mqHandler();
+  
+// media query handler function
+function mqHandler() {
+  
+  let size = null;
+  for (let [scr, mq] of Object.entries(screen)) {
+    if (!mq || mq.matches) size = scr;
+  }
+  
+  console.log(size)
+  
+}
