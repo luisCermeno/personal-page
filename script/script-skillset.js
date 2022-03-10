@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded' , function(){
 //PARALLEX EFFECT
 window.addEventListener("scroll", function() {
   let offset = window.scrollY;
-  console.log(offset)
+  title.style.height = (400 - 3 * offset) + "px";
   skill1.style.backgroundPositionY = offset * 0.7 + "px";
   skill2.style.backgroundPositionY = offset * 0.7 + "px";
   skill3.style.backgroundPositionY = offset * 0.7 + "px";
