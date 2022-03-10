@@ -184,12 +184,13 @@ footer{
   }
   /*--- Title section media queries---*/
   .title-section-container{
-    height: 800px;
-    background-position: 50% -20vw;
+    height: 1024px;
+    background-position: 50% 0vw;
   }
   .title-section-container .title{
     padding-inline-start: 20px;
-    padding-top: 100px;
+    padding-top: 250px;
+    text-align: center;
   }
   .title-section-container  h1{
     font-size: 90px;
