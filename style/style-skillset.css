@@ -80,13 +80,14 @@ footer{
 
 /* ******************************************************************* */
 /* ******************* skillset.html styling ************************* */
+/* **** Optimized for 1440x665px MacBookPro 13in / Laptop L ********** */
 /* ******************************************************************* */
 
 /*--- Title section ---*/
 .title-section-container{
   background-image: url(../img/road-oakdale.jpg);
   height:400px;
-  background-position: 50% -600px;
+  background-position: 50% -45vw;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -141,19 +142,39 @@ footer{
   /* media queries  */
   /* ************** */
 
-@media (max-width: 992px) {
-    /*--- Title section media queries---*/
-  .title-section-container  h1{
-    font-size: 60px;
-    font-weight: 300;
-    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+
+/* 4k- Monitors */
+@media (min-width: 1441px) {
+
+  /*--- Title section media queries---*/
+  .title-section-container{
+    background-position: 50% -55vw;
   }
   .title-section-container .title{
     padding-inline-start: 20px;
+    padding-top: 100px;
+  }
+  .title-section-container  h1{
+    font-size: 90px;
   }
   /*--- Skill section media queries ---*/
-
 }
+
+
+/* Notebooks */
+@media (max-width: 1024px) {
+  /*--- Title section media queries---*/
+  .title-section-container{
+    background-position: 50% -35vw;
+  }
+  .title-section-container  h1{
+    font-size: 70px;
+  }
+
+/*--- Skill section media queries ---*/
+}
+
+/* Tablet */
 @media (max-width: 768px) {
   h1{
     font-size: 30px;
@@ -161,16 +182,22 @@ footer{
   p{
     font-size: 14px;
   }
-  /*--- Title section media queries ---*/
+  /*--- Title section media queries---*/
   .title-section-container{
-    background-position: 50% 80%;
+    height: 800px;
+    background-position: 50% -20vw;
+  }
+  .title-section-container .title{
+    padding-inline-start: 20px;
+    padding-top: 100px;
   }
   .title-section-container  h1{
-    font-size: 45px;
+    font-size: 90px;
   }
   /*--- Skill section media queries ---*/
 
 }
+/* Mobile */
 @media (max-width: 576px) {
   h1{
     font-size: 28px;

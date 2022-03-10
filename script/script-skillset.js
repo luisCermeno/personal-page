@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded' , function(){
 window.addEventListener("scroll", function() {
   let offset = window.scrollY;
   //title section effect
-  titleSection.style.height = (400 - 3 * offset) + "px";
-  title.style.opacity = 1 - 0.02 * offset;
+  titleSection.style.height = (400 - 4 * offset) + "px";
+  title.style.opacity = 1 - 0.015 * offset;
   //skill img effect
   skill1.style.backgroundPositionY = offset * 0.7 + "px";
   skill2.style.backgroundPositionY = offset * 0.7 + "px";
