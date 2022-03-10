@@ -106,7 +106,7 @@ footer{
 
 /*--- Skill section ---*/
 .skill-section-container{
- height: 300px;
+ height: auto;
 }
 .skill-description{
   padding-top: 4%;
@@ -205,23 +205,33 @@ footer{
   p{
     font-size: 14px;
   }
-  .md-none, #img-floated{
-    display: none;
-  }
-  .md-only{
-    display: inline-block;
-  }
-  /*--- Title section media queries ---*/
   .title-section-container{
-    background-position: 0% 80%;
+    height: 850px;
+    background-position: 50% 0vw;
+  }
+  .title-section-container .title{
+    padding-top: 250px;
+    text-align: center;
   }
   .title-section-container  h1{
-    text-align: center;
-    font-size: 40px;
+    font-size: 80px;
   }
+/*--- Skill section ---*/
 
-  /*--- Skill section media queries ---*/
-
-  /*--- Fixed Background Image media queries --*/
+ .skill-description{
+   padding-top: 4%;
+   padding-bottom: 4%;
+   text-align: center;
+ }
+ 
+ .skill-description > p {
+   margin: auto;
+   width: 70%;
+ }
+ /*--- Skill Image Section--*/
+ .skill-img-container{
+   height: 500px;
+   background-size: cover;
+  }
 
 }
