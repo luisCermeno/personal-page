@@ -1,6 +1,6 @@
-//start script on doc loaded
+//start deviceipt on doc loaded
 document.addEventListener('DOMContentLoaded' , function(){
-  // get elements
+  //GET DOCUMENT ELEMENTS
   const skill1 = document.getElementById("skill1")
   const skill2 = document.getElementById("skill2")
   const skill3 = document.getElementById("skill3")
@@ -9,7 +9,38 @@ document.addEventListener('DOMContentLoaded' , function(){
   const titleSectionHeight = titleSection.clientHeight;
   const title = document.getElementById("title");
 
-  //start effects
+
+  //MEDIA QUERIES
+  //Create media queries
+  const Queries = {
+    mobile : null,
+    tablet: window.matchMedia('(min-width: 577px)'),
+    computer : window.matchMedia('(min-width: 769px)')
+  }
+  // Listen for media query changes
+  for (let [device, mediaQuery] of Object.entries(Queries)) {
+  if (mediaQuery) mediaQuery.addEventListener('change', mediaQueryHandler);
+  }
+  // First event
+  mediaQueryHandler();
+  // Media query handler function
+  function mediaQueryHandler() {
+  let size = null;
+  for (let [device, mediaQuery] of Object.entries(Queries)) {
+    if (!mediaQuery || mediaQuery.matches) size = device;
+  }
+  if (size == 'mobile'){
+    console.log('850px')
+  } else if (size == 'tablet') {
+    console.log('1024px')
+  } else {
+    console.log('800px')
+  }
+  }
+
+
+
+  //EFFECTS
   window.addEventListener("scroll", function() {
     let offset = window.scrollY;
     //title section effect
@@ -24,30 +55,4 @@ document.addEventListener('DOMContentLoaded' , function(){
 })
 
 
-//MEDIA QUERIES
-const 
-  screen = {
-    small : null,
-    medium: window.matchMedia('(min-width: 577px)'),
-    large : window.matchMedia('(min-width: 769px)')
-  }
 
-// add media query events
-for (let [scr, mq] of Object.entries(screen)) {
-  if (mq) mq.addEventListener('change', mqHandler);
-}
-
-// first event
-mqHandler();
-  
-// media query handler function
-function mqHandler() {
-  
-  let size = null;
-  for (let [scr, mq] of Object.entries(screen)) {
-    if (!mq || mq.matches) size = scr;
-  }
-  
-  console.log(size)
-  
-}
