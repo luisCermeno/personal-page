@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded' , function(){
   const skill3 = document.getElementById("skill3")
   const skill4 = document.getElementById("skill4")
   const titleSection = document.getElementById("titleSection")
-  const titleSectionHeight = titleSection.clientHeight;
+  // const titleSectionHeight = titleSection.clientHeight;
   const title = document.getElementById("title");
 
 
@@ -25,34 +25,43 @@ document.addEventListener('DOMContentLoaded' , function(){
   mediaQueryHandler();
   // Media query handler function
   function mediaQueryHandler() {
-  let size = null;
-  for (let [device, mediaQuery] of Object.entries(Queries)) {
-    if (!mediaQuery || mediaQuery.matches) size = device;
-  }
-  if (size == 'mobile'){
-    console.log('850px')
-  } else if (size == 'tablet') {
-    console.log('1024px')
-  } else {
-    console.log('800px')
-  }
+    let size = null;
+    for (let [device, mediaQuery] of Object.entries(Queries)) {
+      if (!mediaQuery || mediaQuery.matches) size = device;
+    }
+    //call effects
+    console.log('calling effects with size=' + size)
+  //FIX:: EVENT LISTENER DOES NOT UMBIND PROPERLY!!!
+    window.removeEventListener('scroll', effects, false);
+    window.addEventListener("scroll", effects, false)
+
+    function effects () {
+      let offset = window.scrollY;
+      //title section effects
+      if (size == 'mobile') {
+        console.log('running effects for mobile');
+        titleSection.style.height = (850 - 4 * offset) + "px";
+      } else if (size == 'tablet') {
+        console.log('running effects for tablet');
+        titleSection.style.height = (1024 - 4 * offset) + "px";
+      } else {
+        console.log('running effects for computer');
+        titleSection.style.height = (400 - 4 * offset) + "px";
+      }
+      //title opacity 
+      title.style.opacity = 1 - 0.015 * offset;
+      //skill img effect
+      skill1.style.backgroundPositionY = offset * 0.7 + "px";
+      skill2.style.backgroundPositionY = offset * 0.7 + "px";
+      skill3.style.backgroundPositionY = offset * 0.7 + "px";
+      skill4.style.backgroundPositionY = offset * 0.7 + "px";
+    }
   }
 
 
 
   //EFFECTS
-  window.addEventListener("scroll", function() {
-    let offset = window.scrollY;
-    //title section effect
-    titleSection.style.height = (titleSectionHeight - 4 * offset) + "px";
-    title.style.opacity = 1 - 0.015 * offset;
-    //skill img effect
-    skill1.style.backgroundPositionY = offset * 0.7 + "px";
-    skill2.style.backgroundPositionY = offset * 0.7 + "px";
-    skill3.style.backgroundPositionY = offset * 0.7 + "px";
-    skill4.style.backgroundPositionY = offset * 0.7 + "px";
-  })
-})
 
+})
 
 
