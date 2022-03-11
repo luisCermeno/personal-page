@@ -1,72 +1,69 @@
-//start deviceipt on doc loaded
-document.addEventListener('DOMContentLoaded' , function(){
-  //GET DOCUMENT ELEMENTS
+//start script on doc loaded
+document.addEventListener('DOMContentLoaded' , () => {
+  // ******** GLOBAL VARIABLES  ******** 
   const skill1 = document.getElementById("skill1")
   const skill2 = document.getElementById("skill2")
   const skill3 = document.getElementById("skill3")
   const skill4 = document.getElementById("skill4")
   const titleSection = document.getElementById("titleSection")
   const title = document.getElementById("title");
-  let screenSize = null;
+  let screenSize = null; // global variable for media queries
 
-  //MEDIA QUERIES
-  //Create media queries
+  // ******** MEDIA QUERIES / STYLING ********
+  // Create media queries
   const Queries = {
     mobile : null,
     tablet: window.matchMedia('(min-width: 577px)'),
     computer : window.matchMedia('(min-width: 769px)')
   }
-  // Listen for media query changes
-  for (let [device, mediaQuery] of Object.entries(Queries)) {
-  if (mediaQuery) mediaQuery.addEventListener('change', mediaQueryHandler);
-  }
   // First event
   mediaQueryHandler();
-  // Media query handler function and styling
+  // Add an change listener for each media query
+  for (let [device, mediaQuery] of Object.entries(Queries)) {
+    if (mediaQuery) mediaQuery.addEventListener('change', mediaQueryHandler);
+  }
+  // Handler function and styling
   function mediaQueryHandler() {
-    let size = null;
+    // Check for match on eaech query, and update screenSize (default: mobile)
     for (let [device, mediaQuery] of Object.entries(Queries)) {
       if (!mediaQuery || mediaQuery.matches) screenSize = device;
     }
     console.log('screenSize is:' + screenSize)
     //Styling
-    if (screenSize == 'mobile') {
-      titleSection.style.height = 850 + "px";
-    } else if (screenSize == 'tablet') {
-      titleSection.style.height = 1024 + "px";
-    } else {
-      console.log('running effects for computer');
-      titleSection.style.height = 400 + "px";
+    switch (screenSize) {
+      case 'mobile':
+        titleSection.style.height = 850 + "px";
+        break;
+      case 'tablet': 
+        titleSection.style.height = 1024 + "px";
+        break;
+      default:
+        titleSection.style.height = 400 + "px";
     }
-
   }
 
-
-  //EFFECTS
+  // *************** EFFECTS ***************
   // window.removeEventListener('scroll', effects, false);
   window.addEventListener("scroll", effects, false)
   function effects () {
     let offset = window.scrollY;
-    //title section effects
-    if (screenSize == 'mobile') {
-      console.log('running effects for mobile');
-      titleSection.style.height = (850 - 4 * offset) + "px";
-    } else if (screenSize == 'tablet') {
-      console.log('running effects for tablet');
-      titleSection.style.height = (1024 - 4 * offset) + "px";
-    } else {
-      console.log('running effects for computer');
-      titleSection.style.height = (400 - 4 * offset) + "px";
+    // Title section
+    switch (screenSize) {
+      case 'mobile':
+        titleSection.style.height = (850 - 4 * offset) + "px";
+        break;
+      case 'tablet': 
+        titleSection.style.height = (1024 - 4 * offset) + "px";
+        break;
+      default:
+        titleSection.style.height = (400 - 4 * offset) + "px";
     }
-    //title opacity 
+    // Title opacity 
     title.style.opacity = 1 - 0.015 * offset;
-    //skill img effect
+    // Skill img parallax
     skill1.style.backgroundPositionY = offset * 0.7 + "px";
     skill2.style.backgroundPositionY = offset * 0.7 + "px";
     skill3.style.backgroundPositionY = offset * 0.7 + "px";
     skill4.style.backgroundPositionY = offset * 0.7 + "px";
   }
-
 })
-
-
