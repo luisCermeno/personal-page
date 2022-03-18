@@ -43,4 +43,22 @@ document.addEventListener('DOMContentLoaded' , () => {
         })
     }
   }
+
+  // *************** EFFECTS ***************
+  window.addEventListener("scroll", effects, false)
+  function effects () {
+    let offset = window.scrollY;
+    // Title section
+    switch (screenSize) {
+      case 'mobile':
+        break;
+      case 'tablet': 
+        break;
+      default:
+        projects[0].querySelector('.project-text').style.left = -offset + 'px';
+        projects[0].querySelector('.project-carousel').style.left = offset + 'px';
+
+    }
+  }
+
 })
