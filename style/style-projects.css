@@ -84,24 +84,27 @@ footer{
 /* ******************* project.html styling ************************* */
 /* **** Optimized for 1440x665px MacBookPro 13in / Laptop L ********** */
 /* ******************************************************************* */
+main {
+  height: 2800px;
+}
+.wrapper {
+  height: 700px;
+  position: fixed;
+}
 
+.d-none {
+  display: none !important;
+}
 hr {
   border: solid 1px rgba(255, 255, 255, 0.1);
   width: 80%;
 }
 /*--- Project section ---*/
 .project-section-container{
+  height: 100%;
   color: white;
   align-items: center;
-  /* transform: translateX(100px);
-  opacity: 0;
-  transition: 150ms; */
-
-}
-
-.project-section-container.show{
-  transform: translateX(0);
-  opacity:1;
+  /* border: 1px solid white; */
 }
 
 .project-text{
