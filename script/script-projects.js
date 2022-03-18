@@ -1,14 +1,8 @@
 //start script on doc loaded
 document.addEventListener('DOMContentLoaded' , () => {
   // ******** GLOBAL VARIABLES  ******** 
-  const Projects = {
-    project1: document.getElementById("project1"),
-    project2: document.getElementById("project2"),
-    project3: document.getElementById("project3"),
-    project4: document.getElementById("project4"),
-    project5: document.getElementById("project5"),
-
-  }
+  const projects = document.querySelectorAll('.project-section-container')
+  console.log(projects);
   let screenSize = null; // global variable for media queries
 
   // ******** MEDIA QUERIES / STYLING ********
@@ -34,19 +28,19 @@ document.addEventListener('DOMContentLoaded' , () => {
     //Styling
     switch (screenSize) {
       case 'mobile':
-        for (let [name, element] of Object.entries(Projects)) {
-          element.style.height = 850 + 'px';
-        }
+        projects.forEach(div => {
+          div.style.height = 850 + 'px';
+        })
         break;
       case 'tablet': 
-        for (let [name, element] of Object.entries(Projects)) {
-          element.style.height = 1180 + 'px';
-        }
+      projects.forEach(div => {
+        div.style.height = 1180 + 'px';
+      })
         break;
       default:
-        for (let [name, element] of Object.entries(Projects)) {
-          element.style.height = 700 + 'px';
-        }
+        projects.forEach(div => {
+          div.style.height = 700 + 'px';
+        })
     }
   }
 })
