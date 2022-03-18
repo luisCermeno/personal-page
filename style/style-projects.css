@@ -1,0 +1,167 @@
+/* ******************************************************************* */
+/* ******************* TEMPLATE ************************************** */
+/* ******************************************************************* */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+/* pre-styling */
+html, body{
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+  color: black;
+  background-color: black;
+}
+.border{
+  border: 1px solid black;
+}
+.md-only{
+  display: none;
+}
+/* navbar styling */
+.navbar{
+  background-color: black;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+.navbar-nav{
+  margin: 0px auto;
+}
+/* footer styling */
+footer{
+  background-color: black;
+  font-size: 12px;
+  color: white;
+  border-top: solid 1px rgba(255, 255, 255, 0.1);
+}
+.col-left-footer, .col-right-footer{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-inline-start: 10px;
+}
+.col-left-footer{
+  text-align: left;
+}
+.col-left-footer > p{
+  margin: 0px;
+  padding-top: 10px;
+}
+.col-right-footer{
+  text-align: right;
+}
+.col-right-footer > .icon{
+  color: white !important;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.col-right-footer > .icon:hover{
+  color: gray !important;
+}
+
+/* media queries */
+@media (max-width: 576px) {
+  .navbar-nav{
+    text-align: center;
+  }
+  .col-left-footer, .col-right-footer{
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-nav{
+    text-align: center;
+  }
+  .col-left-footer, .col-right-footer{
+    text-align: center;
+  }
+}
+@media (max-width: 992px) {
+  .col-left-footer, .col-right-footer{
+    text-align: center;
+  }
+}
+
+/* ******************************************************************* */
+/* ******************* project.html styling ************************* */
+/* **** Optimized for 1440x665px MacBookPro 13in / Laptop L ********** */
+/* ******************************************************************* */
+
+hr {
+  border: solid 1px rgba(255, 255, 255, 0.1);
+  width: 80%;
+}
+/*--- Project section ---*/
+.project-section-container{
+  color: white;
+  align-items: center;
+  /* transform: translateX(100px);
+  opacity: 0;
+  transition: 150ms; */
+
+}
+
+.project-section-container.show{
+  transform: translateX(0);
+  opacity:1;
+}
+
+.project-text{
+  padding-top: 4%;
+  padding-bottom: 4%;
+  text-align: center;
+}
+
+.project-description , .project-title{
+  padding-top: 4%;
+  padding-bottom: 4%;
+  margin: auto;
+  width: 70%;
+}
+
+.carousel-indicators {
+  color: black;
+}
+
+.project-img {
+  margin: auto;
+  width: 90%;
+  border-radius: 10px;
+}
+
+
+
+
+
+  /* ************** */
+  /* media queries  */
+  /* Container Height is controlled by js script */
+  /* ************** */
+
+
+/* 4k- Monitors */
+@media (min-width: 1441px) {
+}
+
+
+/* Notebooks */
+@media (max-width: 1024px) {
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  h1{
+    font-size: 30px;
+  }
+  p{
+    font-size: 14px;
+  }
+
+}
+/* Mobile */
+@media (max-width: 576px) {
+  h1{
+    font-size: 28px;
+  }
+  p{
+    font-size: 14px;
+  }
+}
