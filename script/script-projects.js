@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded' , () => {
   console.log(projects);
   let screenSize = null; // global variable for media queries
   let halfway = null; // duration of fade-in/ fade-out in scrolled pixels
-  let tresholds = null; // array for effects use
+  let tresholds = []; // array for effects use
 
   // ******** MEDIA QUERIES / STYLING ********
   // Create media queries
@@ -35,16 +35,33 @@ document.addEventListener('DOMContentLoaded' , () => {
       case 'tablet': 
         break;
       default:
-        halfway = 400
-        tresholds = [halfway,3*halfway, 5*halfway]
-        projects[1].querySelector('.project-text').style.left='400px';
-        projects[1].querySelector('.project-carousel').style.left='-1000px';
-        projects[2].querySelector('.project-text').style.left='-400px';
-        projects[2].querySelector('.project-carousel').style.left='1000px';
-        projects[3].querySelector('.project-text').style.left='400px';
-        projects[3].querySelector('.project-carousel').style.left='-1000px';
-
+        // Set halfway of effect (duration of slide-in/out) accroding to screeSize
+        halfway = 400;
+        offsetText = 400;
+        offsetCarousel = 1000;
     }
+    
+    // Slide in/out effect setup
+    let range = halfway
+    for (let i = 0; i < projects.length; i++) {
+      tresholds.push(range)
+      range = range + 2*halfway
+    }
+    // Set offset of elements
+    let type = 1 //(type=1 text slides in from right, type= -1 text slides in from left)
+    projects.forEach(project => {
+      if (project != projects[0]) {
+        if (type == 1) {
+          project.querySelector('.project-text').style.left= offsetText + 'px';
+          project.querySelector('.project-carousel').style.left= -offsetCarousel + 'px';
+        }
+        else {
+          project.querySelector('.project-text').style.left= -offsetText + 'px';
+          project.querySelector('.project-carousel').style.left= offsetCarousel + 'px';
+        }
+        type = type *-1
+      }
+    })
   }
 
   // *************** EFFECTS ***************
