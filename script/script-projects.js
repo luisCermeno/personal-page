@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded' , () => {
   const projects = document.querySelectorAll('.project-section-container')
   console.log(projects);
   let screenSize = null; // global variable for media queries
+  let tresholds = null;
 
   // ******** MEDIA QUERIES / STYLING ********
   // Create media queries
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded' , () => {
       case 'tablet': 
         break;
       default:
+        tresholds = [500,900]
         projects[1].querySelector('.project-text').style.left='400px';
         projects[1].querySelector('.project-carousel').style.left='-1000px';
 
@@ -45,19 +47,20 @@ document.addEventListener('DOMContentLoaded' , () => {
     let offset = window.scrollY;
     console.log(offset)
     // Effects
-    projects[0].classList.toggle( 'd-none', offset>900 );
-    projects[1].classList.toggle( 'd-none', offset<900 );
+
     switch (screenSize) {
       case 'mobile':
         break;
       case 'tablet': 
         break;
       default:
+        projects[0].classList.toggle( 'd-none', offset > tresholds[0] );
+        projects[1].classList.toggle( 'd-none', offset < tresholds[0] );
         projects[0].querySelector('.project-text').style.left = -offset + 'px';
-        projects[0].querySelector('.project-carousel').style.left = 2.5*offset + 'px';
-        if (offset > 900 && offset < 1350) {
-          projects[1].querySelector('.project-text').style.left= (400 - (offset-900)) + 'px';
-          projects[1].querySelector('.project-carousel').style.left= (-1000 + 2.5*(offset-900)) + 'px';
+        projects[0].querySelector('.project-carousel').style.left = 2.5 * offset + 'px';
+        if (offset > tresholds[0] && offset < tresholds[1]) {
+          projects[1].querySelector('.project-text').style.left= (400 - (offset-tresholds[0])) + 'px';
+          projects[1].querySelector('.project-carousel').style.left= (-1000 + 2.5*(offset - tresholds[0])) + 'px';
         }
     }
   }
