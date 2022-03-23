@@ -1,9 +1,11 @@
 //start script on doc loaded
 document.addEventListener('DOMContentLoaded' , () => {
   // ******** GLOBAL VARIABLES  ******** 
-
+  const wrapper = document.querySelector('#wrapper')
+  const main = document.querySelector('#main')
   const projects = document.querySelectorAll('.project-section-container')
   console.log(projects);
+  let nProjects = projects.length;
   let screenSize = null; // global variable for media queries
   let halfway = null; // duration of fade-in/ fade-out in scrolled pixels
   let tresholds = []; // array for effects use
@@ -35,42 +37,44 @@ document.addEventListener('DOMContentLoaded' , () => {
       case 'tablet': 
         break;
       default:
-        // Set halfway of effect (duration of slide-in/out) accroding to screeSize
+        // Height of elements
+        wrapper.style.height = 700 + 'px';
+        main.style.height = (parseInt(wrapper.style.height) * nProjects+ + 300) + 'px';
+        // Slide effect parameters
         halfway = 400;
         offsetText = 400;
         offsetCarousel = 1000;
     }
-    
-    // Slide in/out effect setup
-    let range = halfway
-    for (let i = 0; i < projects.length; i++) {
-      tresholds.push(range)
-      range = range + 2*halfway
-    }
-    // Set offset of elements
-    let type = 1 //(type=1 text slides in from right, type= -1 text slides in from left)
-    projects.forEach(project => {
-      if (project != projects[0]) {
-        if (type == 1) {
-          project.querySelector('.project-text').style.left= offsetText + 'px';
-          project.querySelector('.project-carousel').style.left= -offsetCarousel + 'px';
-        }
-        else {
-          project.querySelector('.project-text').style.left= -offsetText + 'px';
-          project.querySelector('.project-carousel').style.left= offsetCarousel + 'px';
-        }
-        type = type *-1
-      }
-    })
+
   }
 
   // *************** EFFECTS ***************
+  // SETUP
+  let range = halfway
+  for (let i = 0; i < nProjects; i++) {
+    tresholds.push(range)
+    range = range + 2*halfway
+  }
+  // Offset of elements
+  let type = 1 //(type=1 text slides in from right, type= -1 text slides in from left)
+  projects.forEach(project => {
+    if (project != projects[0]) {
+      if (type == 1) {
+        project.querySelector('.project-text').style.left= offsetText + 'px';
+        project.querySelector('.project-carousel').style.left= -offsetCarousel + 'px';
+      }
+      else {
+        project.querySelector('.project-text').style.left= -offsetText + 'px';
+        project.querySelector('.project-carousel').style.left= offsetCarousel + 'px';
+      }
+      type = type *-1
+    }
+  })
+  // Scroll event listener
   window.addEventListener("scroll", effects, false)
   function effects () {
     let offset = window.scrollY;
     console.log(offset)
-    // Effects
-
     switch (screenSize) {
       case 'mobile':
         break;
@@ -78,6 +82,9 @@ document.addEventListener('DOMContentLoaded' , () => {
         break;
       default:
         // Toggle container display to none according to offset
+        // for (let i = 0; i < nProjects; i++) {
+        //   projects[i].classList.toggle( 'd-none', offset < tresholds[i-1] || offset > tresholds[i] );
+        // }
         projects[0].classList.toggle( 'd-none', offset > tresholds[0] );
         projects[1].classList.toggle( 'd-none', offset < tresholds[0] || offset > tresholds[1] );
         projects[2].classList.toggle( 'd-none', offset < tresholds[1] || offset > tresholds[2] );
