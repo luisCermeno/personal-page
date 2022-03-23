@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded' , () => {
   const wrapper = document.querySelector('#wrapper')
   const main = document.querySelector('#main')
   const projects = document.querySelectorAll('.project-section-container')
-  console.log(projects);
   let nProjects = projects.length;
   let screenSize = null; // global variable for media queries
   let tresholds = []; // array for effects use
@@ -75,7 +74,6 @@ document.addEventListener('DOMContentLoaded' , () => {
   window.addEventListener("scroll", effects, false)
   function effects () {
     let offset = window.scrollY;
-    console.log(offset)
     switch (screenSize) {
       case 'mobile':
         break;
