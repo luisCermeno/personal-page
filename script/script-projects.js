@@ -95,8 +95,8 @@ document.addEventListener('DOMContentLoaded' , () => {
             projects[i].classList.toggle( 'd-none', offset < tresholds[i-1] || offset > tresholds[i] );
             // Slide in
             if (offset > tresholds[i-1] && offset < (tresholds[i-1] + halfway)) {
-              projects[i].querySelector('.project-text').style.left= sign * (400 - (offset-tresholds[i-1])) + 'px';
-              projects[i].querySelector('.project-carousel').style.left= sign * (-1000 + 2.5 * (offset - tresholds[i-1])) + 'px';
+              projects[i].querySelector('.project-text').style.left= sign * (offsetText - (offset-tresholds[i-1])) + 'px';
+              projects[i].querySelector('.project-carousel').style.left= sign * (-offsetCarousel + 2.5 * (offset - tresholds[i-1])) + 'px';
             }
             // Slide out
             else if (offset > (tresholds[i-1] + halfway) && offset < tresholds[i]) {
@@ -107,37 +107,6 @@ document.addEventListener('DOMContentLoaded' , () => {
             }
           }
         }
-
-        // Project 0 slide out
-        // if (offset < tresholds[0]) {
-        //   projects[0].querySelector('.project-text').style.left = -offset + 'px';
-        //   projects[0].querySelector('.project-carousel').style.left = 2.5 * offset + 'px';
-        // }
-        // Project 1 slide in
-        // else if (offset > tresholds[0] && offset < (tresholds[0] + halfway)) {
-        //   projects[1].querySelector('.project-text').style.left= (400 - (offset-tresholds[0])) + 'px';
-        //   projects[1].querySelector('.project-carousel').style.left= (-1000 + 2.5 * (offset - tresholds[0])) + 'px';
-        // }
-        // Project 1 slide out
-        // else if (offset > (tresholds[0] + halfway) && offset < tresholds[1]) {
-        //   projects[1].querySelector('.project-text').style.left= (offset- (tresholds[0] + halfway)) + 'px';
-        //   projects[1].querySelector('.project-carousel').style.left=  - 2.5 * (offset - (tresholds[0] + halfway)) + 'px';
-        // }
-        // Project 2 slide in
-        // else if (offset > tresholds[1] && offset < (tresholds[1] + halfway)) {
-        //   projects[2].querySelector('.project-text').style.left= (-400 + (offset-tresholds[1])) + 'px';
-        //   projects[2].querySelector('.project-carousel').style.left= (1000 - 2.5 * (offset - tresholds[1])) + 'px';
-        // }
-        // Project 2 slide out
-        // else if (offset > (tresholds[1] + halfway) && offset < tresholds[2]) {
-        //   projects[2].querySelector('.project-text').style.left= -(offset- (tresholds[1] + halfway)) + 'px';
-        //   projects[2].querySelector('.project-carousel').style.left=  2.5 * (offset - (tresholds[1] + halfway)) + 'px';
-        // }
-        // Project 3 slide in
-        // else if (offset > tresholds[2] && offset < (tresholds[2] + halfway)) {
-        //   projects[3].querySelector('.project-text').style.left= (400 - (offset-tresholds[2])) + 'px';
-        //   projects[3].querySelector('.project-carousel').style.left= (-1000 + 2.5 * (offset - tresholds[2])) + 'px';
-        // }
     }
   }
 
