@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded' , () => {
         wrapper.style.height = 700 + 'px';
         main.style.height = (parseInt(wrapper.style.height) * nProjects+ + 300) + 'px';
         // Slide effect parameters
-        halfway = 400;
-        offsetText = 400;
-        offsetCarousel = 1000;
+        halfway = 350;
+        offsetText = 350;
+        offsetCarousel = 875;
     }
 
   }
@@ -81,10 +81,12 @@ document.addEventListener('DOMContentLoaded' , () => {
       case 'tablet': 
         break;
       default:
-        // Toggle container display to none according to offset
+        // For each project, evaluate treshold effect, and apply.
         for (let i = 0; i < nProjects; i++) {
           if (i == 0) {
+            // Toggle display
             projects[i].classList.toggle( 'd-none', offset > tresholds[i] );
+            // Slide out
             if (offset < tresholds[i]) {
               projects[i].querySelector('.project-text').style.left = -offset + 'px';
               projects[i].querySelector('.project-carousel').style.left = 2.5 * offset + 'px';
@@ -92,7 +94,13 @@ document.addEventListener('DOMContentLoaded' , () => {
           }
           else {
             sign = ((-1)**(i+1));
-            projects[i].classList.toggle( 'd-none', offset < tresholds[i-1] || offset > tresholds[i] );
+            // Toggle display
+            if (i == nProjects-1) {
+              projects[i].classList.toggle( 'd-none', offset < tresholds[i-1]);
+            }
+            else {
+              projects[i].classList.toggle( 'd-none', offset < tresholds[i-1] || offset > tresholds[i] );
+            }
             // Slide in
             if (offset > tresholds[i-1] && offset < (tresholds[i-1] + halfway)) {
               projects[i].querySelector('.project-text').style.left= sign * (offsetText - (offset-tresholds[i-1])) + 'px';
@@ -109,5 +117,4 @@ document.addEventListener('DOMContentLoaded' , () => {
         }
     }
   }
-
 })
