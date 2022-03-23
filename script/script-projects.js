@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded' , () => {
   console.log(projects);
   let nProjects = projects.length;
   let screenSize = null; // global variable for media queries
-  let halfway = null; // duration of fade-in/ fade-out in scrolled pixels
   let tresholds = []; // array for effects use
 
   // ******** MEDIA QUERIES / STYLING ********
@@ -40,22 +39,24 @@ document.addEventListener('DOMContentLoaded' , () => {
         // Height of elements
         wrapper.style.height = 700 + 'px';
         main.style.height = (parseInt(wrapper.style.height) * nProjects+ + 300) + 'px';
-        // Slide effect parameters
-        halfway = 350;
-        offsetText = 350;
-        offsetCarousel = 875;
     }
 
   }
 
   // *************** EFFECTS ***************
   // SETUP
+
+  // Slide effect parameters
+  let halfway = (parseInt(wrapper.style.height))/2;
+  let offsetText = halfway;
+  let offsetCarousel = 1.1 * (document.querySelector('.project-img').offsetWidth) ;
+  let speedCarousel = offsetCarousel / halfway;
   let range = halfway
   for (let i = 0; i < nProjects; i++) {
     tresholds.push(range)
-    range = range + 2*halfway
+    range = range + 2 * halfway
   }
-  // Offset of elements
+  // Offset of elements (out of screen)
   let sign = 1 //(sign=1 text slides in from right, sign= -1 text slides in from left)
   projects.forEach(project => {
     if (project != projects[0]) {
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded' , () => {
             // Slide out
             if (offset < tresholds[i]) {
               projects[i].querySelector('.project-text').style.left = -offset + 'px';
-              projects[i].querySelector('.project-carousel').style.left = 2.5 * offset + 'px';
+              projects[i].querySelector('.project-carousel').style.left = speedCarousel * offset + 'px';
             }
           }
           else {
@@ -104,13 +105,13 @@ document.addEventListener('DOMContentLoaded' , () => {
             // Slide in
             if (offset > tresholds[i-1] && offset < (tresholds[i-1] + halfway)) {
               projects[i].querySelector('.project-text').style.left= sign * (offsetText - (offset-tresholds[i-1])) + 'px';
-              projects[i].querySelector('.project-carousel').style.left= sign * (-offsetCarousel + 2.5 * (offset - tresholds[i-1])) + 'px';
+              projects[i].querySelector('.project-carousel').style.left= sign * (-offsetCarousel + speedCarousel * (offset - tresholds[i-1])) + 'px';
             }
             // Slide out
             else if (offset > (tresholds[i-1] + halfway) && offset < tresholds[i]) {
               if (i != nProjects-1) {
                 projects[i].querySelector('.project-text').style.left = sign * (offset- (tresholds[i-1] + halfway)) + 'px';
-                projects[i].querySelector('.project-carousel').style.left=  sign * (- 2.5 * (offset - (tresholds[i-1] + halfway))) + 'px';
+                projects[i].querySelector('.project-carousel').style.left=  sign * (- speedCarousel * (offset - (tresholds[i-1] + halfway))) + 'px';
               }
             }
           }
