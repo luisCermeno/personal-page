@@ -82,13 +82,14 @@ document.addEventListener('DOMContentLoaded' , () => {
         break;
       default:
         // Toggle container display to none according to offset
-        // for (let i = 0; i < nProjects; i++) {
-        //   projects[i].classList.toggle( 'd-none', offset < tresholds[i-1] || offset > tresholds[i] );
-        // }
-        projects[0].classList.toggle( 'd-none', offset > tresholds[0] );
-        projects[1].classList.toggle( 'd-none', offset < tresholds[0] || offset > tresholds[1] );
-        projects[2].classList.toggle( 'd-none', offset < tresholds[1] || offset > tresholds[2] );
-        projects[3].classList.toggle( 'd-none', offset < tresholds[2] || offset > tresholds[3] );
+        for (let i = 0; i < nProjects; i++) {
+          if (i == 0) {
+            projects[i].classList.toggle( 'd-none', offset > tresholds[i] );
+          }
+          else {
+            projects[i].classList.toggle( 'd-none', offset < tresholds[i-1] || offset > tresholds[i] );
+          }
+        }
 
         // Project 0 slide out
         if (offset < tresholds[0]) {
