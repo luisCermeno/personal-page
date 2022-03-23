@@ -28,22 +28,25 @@ document.addEventListener('DOMContentLoaded' , () => {
       if (!mediaQuery || mediaQuery.matches) screenSize = device;
     }
     console.log('screenSize is:' + screenSize)
-    //Styling
-    switch (screenSize) {
-      case 'mobile':
-        break;
-      case 'tablet': 
-        break;
-      default:
-        // Height of elements
-        wrapper.style.height = 700 + 'px';
-        main.style.height = (parseInt(wrapper.style.height) * nProjects+ + 300) + 'px';
-    }
-
+    // Height of elements
+    wrapper.style.height = (window.innerHeight-document.querySelector('.navbar').offsetHeight) + 'px';
+    main.style.height = (parseInt(wrapper.style.height) * nProjects+ + 300) + 'px';
+    // Styling
+    // switch (screenSize) {
+    //   case 'mobile':
+    //     break;
+    //   case 'tablet': 
+    //     break;
+    //   default:
+    // }
   }
 
   // *************** EFFECTS ***************
-  // SETUP
+  // Adjust wrapper to window innerwidth on resize
+  window.addEventListener('resize', ()=> {
+    wrapper.style.height = (window.innerHeight-document.querySelector('.navbar').offsetHeight) + 'px';
+    main.style.height = (parseInt(wrapper.style.height) * nProjects+ + 300) + 'px';
+    })
 
   // Slide effect parameters
   let halfway = (parseInt(wrapper.style.height))/2;
@@ -74,46 +77,46 @@ document.addEventListener('DOMContentLoaded' , () => {
   window.addEventListener("scroll", effects, false)
   function effects () {
     let offset = window.scrollY;
-    switch (screenSize) {
-      case 'mobile':
-        break;
-      case 'tablet': 
-        break;
-      default:
-        // For each project, evaluate treshold effect, and apply.
-        for (let i = 0; i < nProjects; i++) {
-          if (i == 0) {
-            // Toggle display
-            projects[i].classList.toggle( 'd-none', offset > tresholds[i] );
-            // Slide out
-            if (offset < tresholds[i]) {
-              projects[i].querySelector('.project-text').style.left = -offset + 'px';
-              projects[i].querySelector('.project-carousel').style.left = speedCarousel * offset + 'px';
-            }
-          }
-          else {
-            sign = ((-1)**(i+1));
-            // Toggle display
-            if (i == nProjects-1) {
-              projects[i].classList.toggle( 'd-none', offset < tresholds[i-1]);
-            }
-            else {
-              projects[i].classList.toggle( 'd-none', offset < tresholds[i-1] || offset > tresholds[i] );
-            }
-            // Slide in
-            if (offset > tresholds[i-1] && offset < (tresholds[i-1] + halfway)) {
-              projects[i].querySelector('.project-text').style.left= sign * (offsetText - (offset-tresholds[i-1])) + 'px';
-              projects[i].querySelector('.project-carousel').style.left= sign * (-offsetCarousel + speedCarousel * (offset - tresholds[i-1])) + 'px';
-            }
-            // Slide out
-            else if (offset > (tresholds[i-1] + halfway) && offset < tresholds[i]) {
-              if (i != nProjects-1) {
-                projects[i].querySelector('.project-text').style.left = sign * (offset- (tresholds[i-1] + halfway)) + 'px';
-                projects[i].querySelector('.project-carousel').style.left=  sign * (- speedCarousel * (offset - (tresholds[i-1] + halfway))) + 'px';
-              }
-            }
+    // For each project, evaluate treshold effect, and apply.
+    for (let i = 0; i < nProjects; i++) {
+      if (i == 0) {
+        // Toggle display
+        projects[i].classList.toggle( 'd-none', offset > tresholds[i] );
+        // Slide out
+        if (offset < tresholds[i]) {
+          projects[i].querySelector('.project-text').style.left = -offset + 'px';
+          projects[i].querySelector('.project-carousel').style.left = speedCarousel * offset + 'px';
+        }
+      }
+      else {
+        sign = ((-1)**(i+1));
+        // Toggle display
+        if (i == nProjects-1) {
+          projects[i].classList.toggle( 'd-none', offset < tresholds[i-1]);
+        }
+        else {
+          projects[i].classList.toggle( 'd-none', offset < tresholds[i-1] || offset > tresholds[i] );
+        }
+        // Slide in
+        if (offset > tresholds[i-1] && offset < (tresholds[i-1] + halfway)) {
+          projects[i].querySelector('.project-text').style.left= sign * (offsetText - (offset-tresholds[i-1])) + 'px';
+          projects[i].querySelector('.project-carousel').style.left= sign * (-offsetCarousel + speedCarousel * (offset - tresholds[i-1])) + 'px';
+        }
+        // Slide out
+        else if (offset > (tresholds[i-1] + halfway) && offset < tresholds[i]) {
+          if (i != nProjects-1) {
+            projects[i].querySelector('.project-text').style.left = sign * (offset- (tresholds[i-1] + halfway)) + 'px';
+            projects[i].querySelector('.project-carousel').style.left=  sign * (- speedCarousel * (offset - (tresholds[i-1] + halfway))) + 'px';
           }
         }
+      }
     }
+    // switch (screenSize) {
+    //   case 'mobile':
+    //     break;
+    //   case 'tablet': 
+    //     break;
+    //   default:
+    // }
   }
 })
