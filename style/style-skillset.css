@@ -86,8 +86,7 @@ footer{
 /*--- Title section ---*/
 .title-section-container{
   background-image: url(../img/road-oakdale.jpg);
-  height:400px;
-  background-position: 50% -45vw;
+  background-position: 50% -25vw;
   background-repeat: no-repeat;
   background-size: cover;
 }

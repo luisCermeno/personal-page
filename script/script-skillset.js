@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded' , () => {
         titleSection.style.height = 1024 + "px";
         break;
       default:
-        titleSection.style.height = 400 + "px";
+        titleSection.style.height = 800 + "px";
     }
   }
 
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded' , () => {
         titleSection.style.height = (1024 - 4 * offset) + "px";
         break;
       default:
-        titleSection.style.height = (400 - 4 * offset) + "px";
+        titleSection.style.height = (800 - 1.5 * offset) + "px";
     }
     // Title opacity 
     title.style.opacity = 1 - 0.015 * offset;
