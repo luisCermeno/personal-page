@@ -61,7 +61,8 @@ document.addEventListener('DOMContentLoaded' , () => {
   // Offset of elements (out of screen)
   let sign = 1 //(sign=1 text slides in from right, sign= -1 text slides in from left)
   projects.forEach(project => {
-    if (project != projects[0]) {
+    // not for first and last project (final section)
+    if (project != projects[0] && project != projects[nProjects - 1]) {
       if (sign == 1) {
         project.querySelector('.project-text').style.left= offsetText + 'px';
         project.querySelector('.project-carousel').style.left= -offsetCarousel + 'px';
@@ -79,44 +80,35 @@ document.addEventListener('DOMContentLoaded' , () => {
     let offset = window.scrollY;
     // For each project, evaluate treshold effect, and apply.
     for (let i = 0; i < nProjects; i++) {
+      // First project only:
       if (i == 0) {
-        // Toggle display
-        projects[i].classList.toggle( 'd-none', offset > tresholds[i] );
-        // Slide out
-        if (offset < tresholds[i]) {
+        projects[i].classList.toggle( 'd-none', offset > tresholds[i] ); // Toggle display
+        if (offset < tresholds[i]) {  // Slide out
           projects[i].querySelector('.project-text').style.left = -offset + 'px';
           projects[i].querySelector('.project-carousel').style.left = speedCarousel * offset + 'px';
         }
       }
       else {
         sign = ((-1)**(i+1));
-        // Toggle display
+        // Last project only
         if (i == nProjects-1) {
           projects[i].classList.toggle( 'd-none', offset < tresholds[i-1]);
         }
+        // Every other project
         else {
-          projects[i].classList.toggle( 'd-none', offset < tresholds[i-1] || offset > tresholds[i] );
-        }
-        // Slide in
-        if (offset > tresholds[i-1] && offset < (tresholds[i-1] + halfway)) {
-          projects[i].querySelector('.project-text').style.left= sign * (offsetText - (offset-tresholds[i-1])) + 'px';
-          projects[i].querySelector('.project-carousel').style.left= sign * (-offsetCarousel + speedCarousel * (offset - tresholds[i-1])) + 'px';
-        }
-        // Slide out
-        else if (offset > (tresholds[i-1] + halfway) && offset < tresholds[i]) {
-          if (i != nProjects-1) {
-            projects[i].querySelector('.project-text').style.left = sign * (offset- (tresholds[i-1] + halfway)) + 'px';
-            projects[i].querySelector('.project-carousel').style.left=  sign * (- speedCarousel * (offset - (tresholds[i-1] + halfway))) + 'px';
+          projects[i].classList.toggle( 'd-none', offset < tresholds[i-1] || offset > tresholds[i] ) // Toggle display
+          if (offset > tresholds[i-1] && offset < (tresholds[i-1] + halfway)) { // Slide in
+            projects[i].querySelector('.project-text').style.left= sign * (offsetText - (offset-tresholds[i-1])) + 'px';
+            projects[i].querySelector('.project-carousel').style.left= sign * (-offsetCarousel + speedCarousel * (offset - tresholds[i-1])) + 'px';
+          }
+          else if (offset > (tresholds[i-1] + halfway) && offset < tresholds[i]) { // Slide out
+            if (i != nProjects-1) {
+              projects[i].querySelector('.project-text').style.left = sign * (offset- (tresholds[i-1] + halfway)) + 'px';
+              projects[i].querySelector('.project-carousel').style.left=  sign * (- speedCarousel * (offset - (tresholds[i-1] + halfway))) + 'px';
+            }
           }
         }
       }
     }
-    // switch (screenSize) {
-    //   case 'mobile':
-    //     break;
-    //   case 'tablet': 
-    //     break;
-    //   default:
-    // }
   }
 })

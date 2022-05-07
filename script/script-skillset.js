@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded' , () => {
         titleSection.style.height = 1024 + "px";
         break;
       default:
-        titleSection.style.height = 800 + "px";
+        titleSection.style.height = 720 + "px";
     }
   }
 
@@ -47,17 +47,17 @@ document.addEventListener('DOMContentLoaded' , () => {
   window.addEventListener("scroll", effects, false)
   function effects () {
     let offset = window.scrollY;
-    // Title section
-    switch (screenSize) {
-      case 'mobile':
-        titleSection.style.height = (850 - 4 * offset) + "px";
-        break;
-      case 'tablet': 
-        titleSection.style.height = (1024 - 4 * offset) + "px";
-        break;
-      default:
-        titleSection.style.height = (800 - 1.5 * offset) + "px";
-    }
+    // // Title section
+    // switch (screenSize) {
+    //   case 'mobile':
+    //     titleSection.style.height = (850 - 4 * offset) + "px";
+    //     break;
+    //   case 'tablet': 
+    //     titleSection.style.height = (1024 - 4 * offset) + "px";
+    //     break;
+    //   default:
+    //     titleSection.style.height = (800 - 1.5 * offset) + "px";
+    // }
     // Title opacity 
     title.style.opacity = 1 - 0.015 * offset;
     // Skill img parallax
