@@ -14,6 +14,9 @@ html, body{
 .border{
   border: 1px solid black;
 }
+.lg-only {
+   display: none;
+}
 .md-only{
   display: none;
 }
@@ -140,10 +143,13 @@ footer{
 .col-right{
   padding-right: 9%;
 }
-.col-left > img{
-  height: 720px;
-  /* margin-left: 50px; */
+.img-stadium {
+  max-width:514px;
+  max-height:720px;
+  width: auto;
+  height: auto;
 }
+
 #img-floated{
   display: none;
 }
@@ -199,9 +205,21 @@ figure {
   /* ************** */
   /* media queries  */
   /* ************** */
-
+@media (max-width: 1200px) { 
+  .lg-none, #img-floated{
+    display: none;
+  }
+  .lg-only {
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+}
 @media (max-width: 992px) { 
-    /*--- Hello section media queries---*/
+  .lg-only {
+    display: none;
+  }
+  /*--- Hello section media queries---*/
   .hello-section-container  h1{
     font-size: 60px;
     padding-top: 365px;
@@ -332,7 +350,7 @@ figure {
     margin-bottom: 0px;
   }
   #btn-learn-more,#btn-check-skills{
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.8);
   }
 
   /*--- About me section media queries ---*/

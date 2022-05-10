@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded' , () => {
   // ******** GLOBAL VARIABLES  ******** 
   const titleSection = document.getElementById("titleSection")
-  const title = document.getElementById("title");
   let screenSize = null; // global variable for media queries
 
   // ******** MEDIA QUERIES / STYLING ********
@@ -25,16 +24,7 @@ document.addEventListener('DOMContentLoaded' , () => {
       if (!mediaQuery || mediaQuery.matches) screenSize = device;
     }
     console.log('screenSize is:' + screenSize)
-    //Styling
-    switch (screenSize) {
-      case 'mobile':
-        titleSection.style.height = 850 + "px";
-        break;
-      case 'tablet': 
-        titleSection.style.height = 1024 + "px";
-        break;
-      default:
-        titleSection.style.height = 720 + "px";
-    }
+    //read screen height and change height of element
+    titleSection.style.height = (window.innerHeight-document.querySelector('.navbar').offsetHeight) + 'px';
   }
 })

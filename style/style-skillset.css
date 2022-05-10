@@ -86,9 +86,10 @@ footer{
 /*--- Title section ---*/
 .title-section-container{
   background-image: url(../img/road-oakdale.jpg);
-  background-position: 50% -25vw;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: bottom;
+
 }
 .title-section-container .title{
   color: white;
@@ -106,7 +107,14 @@ footer{
 /*--- Skill section ---*/
 .skill-section-container{
  height: auto;
+ padding-top: 30px;
+ /* padding-bottom: 10px; */
+
 }
+/* .skill-img {
+  padding-bottom: 10px;
+} */
+
 .skill-description{
   padding-top: 4%;
   padding-bottom: 4%;
@@ -117,25 +125,7 @@ footer{
   margin: auto;
   width: 70%;
 }
-/*--- Skill Image Section--*/
-.skill-img-container{
-  height: 500px;
-  background-size: cover;
- }
 
- #skill1{
-   background-image: url(../img/skillset/frontend.png);
- }
- #skill2{
-  background-image: url(../img/skillset/frontend.png);
-}
-#skill3{
-  background-image: url(../img/skillset/frontend.png);
-
-}
-#skill4{
-  background-image: url(../img/skillset/frontend.png);
-}
 
   /* ************** */
   /* media queries  */
@@ -147,10 +137,10 @@ footer{
 
   /*--- Title section media queries---*/
   /* Height is controlled by js script */
-
+/* 
   .title-section-container{
-    background-position: 50% -55vw;
-  }
+    background-position: 50% -20vw;
+  } */
   .title-section-container .title{
     padding-inline-start: 20px;
     padding-top: 100px;
@@ -165,9 +155,6 @@ footer{
 /* Notebooks */
 @media (max-width: 1024px) {
   /*--- Title section media queries---*/
-  .title-section-container{
-    background-position: 50% -35vw;
-  }
   .title-section-container  h1{
     font-size: 70px;
   }
@@ -184,9 +171,9 @@ footer{
     font-size: 14px;
   }
   /*--- Title section media queries---*/
-  .title-section-container{
+  /* .title-section-container{
     background-position: 50% 0vw;
-  }
+  } */
   .title-section-container .title{
     padding-inline-start: 20px;
     padding-top: 250px;
@@ -206,9 +193,9 @@ footer{
   p{
     font-size: 14px;
   }
-  .title-section-container{
+  /* .title-section-container{
     background-position: 50% 0vw;
-  }
+  } */
   .title-section-container .title{
     padding-top: 250px;
     text-align: center;
@@ -226,11 +213,6 @@ footer{
  
  .skill-description > p {
    margin: auto;
-   width: 70%;
+   width: 90%;
  }
- /*--- Skill Image Section--*/
- .skill-img-container{
-   height: 500px;
-   background-size: cover;
-  }
 }
