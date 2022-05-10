@@ -14,7 +14,7 @@ html, body{
 .border{
   border: 1px solid black;
 }
-.lg-only {
+.lg-xs-only {
    display: none;
 }
 .md-only{
@@ -85,11 +85,11 @@ footer{
 /* ******************* about.html styling **************************** */
 /* ******************************************************************* */
 
-.border-red {
-  border: solid 1px red;
-}
-.border-blue {
-  border: solid 1px blue;
+.lg-xs-only {
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 /*--- Hello section ---*/
 .hello-section-container{
@@ -209,14 +209,18 @@ figure {
   .lg-none, #img-floated{
     display: none;
   }
-  .lg-only {
+  .lg-xs-only {
     display: inline-block;
-    padding-top: 15px;
-    padding-bottom: 30px;
+  }
+  .col-right{
+    padding: 5% 5%;
+  }
+  .hello-section-container  h1{
+    padding-top: 180px;
   }
 }
 @media (max-width: 992px) { 
-  .lg-only {
+  .lg-xs-only {
     display: none;
   }
   /*--- Hello section media queries---*/
@@ -359,7 +363,7 @@ figure {
     padding-bottom: 1.5rem;
     text-align: center;
   }
-  .about-me img{
+  .about-me .lg-none{
     display: block;
     height: 300px;
     margin-left: auto;
@@ -389,5 +393,11 @@ figure {
 @media (max-width: 450px) {
   .hello-section-container{
     background-position: 50% 0%;
+  }
+  .lg-xs-only {
+    display: inline-block;
+  }
+  .lg-xs-only > img {
+    height: 400px;
   }
 }
