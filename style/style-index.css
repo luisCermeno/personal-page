@@ -129,7 +129,7 @@ footer{
   padding-right: 9%;
 }
 .col-left > img{
-  height: 450px;
+  height: 720px;
   /* margin-left: 50px; */
 }
 #img-floated{
@@ -153,7 +153,7 @@ figure {
 }
 #fixed-img {
   z-index: -1;
-  background-image: url(../img/point-reyes.jpg);
+  background-image: url(../img/reyes.jpg);
   position: fixed;
   display: block;
   top: 0;
