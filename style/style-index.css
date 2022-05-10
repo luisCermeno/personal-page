@@ -82,8 +82,15 @@ footer{
 /* ******************* about.html styling **************************** */
 /* ******************************************************************* */
 
+.border-red {
+  border: solid 1px red;
+}
+.border-blue {
+  border: solid 1px blue;
+}
 /*--- Hello section ---*/
 .hello-section-container{
+  position: relative;
   background-image: url(../img/mit.jpg);
   height: 600px;
   background-position: 50% 80%;
@@ -97,24 +104,29 @@ footer{
   font-weight: 300;
   text-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
-.hello-section-container .hi{
+.buttons-description-col {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 20px;
+}
+.hi-col, .description, .buttons{
   padding-inline-start: 50px;
 }
-.hello-section-container .btn{
+.description, .buttons .btn {
+  font-size: 20px;
+}
+.buttons .btn{
   background-color: black;
   color: white;
   border: black;
 }
-.hello-section-container .btn:hover{
+.buttons .btn:hover{
   background-color: white;
   color: black;
   text-shadow: 0px 0px 0px rgb(0, 0, 0);
 }
-.description , .buttons{
-  padding-top: 0px;
-  padding-inline-start: 50px;
-  font-size: 20px;
-}
+
+
 
 /*--- About me section ---*/
 .about-me{
@@ -188,7 +200,7 @@ figure {
   /* media queries  */
   /* ************** */
 
-@media (max-width: 992px) {
+@media (max-width: 992px) { 
     /*--- Hello section media queries---*/
   .hello-section-container  h1{
     font-size: 60px;
@@ -196,19 +208,11 @@ figure {
     font-weight: 300;
     text-shadow: 0px 0px 10px rgb(0, 0, 0);
   }
-  .hello-section-container .hi{
-    padding-inline-start: 20px;
-  }
-  .description, .buttons{
-    padding-top: 0px;
-    padding-inline-start: 20px;
-    font-size: 18px;
-  }
   .description > p{
     width: 90%;
   }
   .buttons{
-    padding-left: 20%;
+    text-align: center;
   }
   /*--- About me section media queries ---*/
   .about-me{
@@ -230,6 +234,11 @@ figure {
     margin-bottom: 5%;
   }
 }
+
+
+
+
+
 @media (max-width: 768px) {
   h1{
     font-size: 30px;
@@ -246,13 +255,12 @@ figure {
     font-size: 45px;
     padding-top: 270px;
   }
-  .description, .buttons{
-    padding-inline-start: 20px;
+  .description, .buttons .btn {
     font-size: 16px;
   }
   .buttons{
-    padding-left: 18%;
     font-size: 16px;
+    text-align: center;
   }
   /*--- About me section media queries ---*/
   .about-me{
@@ -287,6 +295,11 @@ figure {
     fill: black;
   }
 }
+
+
+
+
+
 @media (max-width: 576px) {
   h1{
     font-size: 28px;
@@ -310,21 +323,13 @@ figure {
     font-size: 40px;
     padding-top: 28%;
   }
-  .buttons-description-row{
-    padding-top: 30%;
-  }
-  .description, .buttons{
+  .description, .buttons .btn {
     font-size: 16px;
   }
   .description > p{
     text-align: center;
     width: 75%;
     margin-bottom: 0px;
-    /* padding-inline-start: 0px; */
-  }
-  .buttons{
-    padding-inline-start: 30%;
-    text-align: center;
   }
   #btn-learn-more,#btn-check-skills{
     border: 1px solid white;
@@ -359,5 +364,12 @@ figure {
   .contact-icon:hover{
     color: white !important;
     fill: black;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .hello-section-container{
+    background-position: 50% 0%;
   }
 }

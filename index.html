@@ -17,22 +17,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/v4-shims.js"></script>
     <link rel="stylesheet" href="style/style-index.css">
     <link rel="shorcut icon" type="image/png" href="img/icon.png">
-    <script>
-      $(window).on('resize', function() {
-      var win = $(this);
-      if (win.width() > 768) {
-        $('#btn-learn-more').removeClass('btn-sm');
-        $('#btn-learn-more').addClass('btn-lg');
-        $('#btn-check-skills').removeClass('btn-sm');
-        $('#btn-check-skills').addClass('btn-lg');
-      } else{
-        $('#btn-learn-more').removeClass('btn-lg');
-        $('#btn-learn-more').addClass('btn-sm');
-        $('#btn-check-skills').removeClass('btn-lg');
-        $('#btn-check-skills').addClass('btn-sm');
-      }
-      });
-    </script>
   </head>
 
   <body>
@@ -66,20 +50,25 @@
     <!-- Hello  section-->
     <div class="container-fluid hello-section-container">
       <div class="row">
-        <div class="col-12 hi">
+        <div class="col-12 hi-col border-blue ">
           <h1 class="display-1 ">Hello! I'm Luis </h1>
         </div>
-      </div>
-      <div class="row buttons-description-row">
-        <div class="col-6 col-lg-12 description">
-          <p> EECS student currently based in stadium Bay Area. </p>
-          <p class="md-none">Berkeley Engineering </p>
+        <div class="col-12 buttons-description-col border-red">
+          <div class="row">
+            <div class="col-6 col-lg-12 description border">
+              <p> EECS student currently based in SF Bay Area. </p>
+              <p class="md-none">Berkeley Engineering </p>
+            </div>
+            <div class="col-6 col-lg-12 buttons border">
+              <span class="buttons-wrapper">
+                <a class="btn btn-outline-light" id="btn-learn-more" href="#h1-about-me"> about</a>
+                <a class="btn btn-outline-light" id="btn-check-skills" href="skillset.html"> skillset</a>
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="col-6 col-lg-12 buttons">
-          <a class="btn btn-outline-light btn-sm" id="btn-learn-more" href="#h1-about-me"> about</a>
-          <a class="btn btn-outline-light btn-sm" id="btn-check-skills" href="skillset.html"> skillset</a>
-        </div>
       </div>
+
     </div>
     <!-- About me section -->
     <div class="container-fluid about-me" id="h1-about-me">
